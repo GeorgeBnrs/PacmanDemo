@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +14,7 @@ namespace PacmanDemo
 {
     public partial class Form1 : Form
     {
+        int score = 0;
         int msec = 0;
         string direction = "right";
 
@@ -25,33 +27,53 @@ namespace PacmanDemo
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             msec++;
             updateTimer(msec);
             if (direction == "up")
             {
-                pictureBox2.Location = new Point(pictureBox2.Location.X, pictureBox2.Location.Y - 10);
+                pictureBox2.Location = new Point(pictureBox2.Location.X, pictureBox2.Location.Y - 20);
 
             }
             else if (direction == "down")
             {
-                pictureBox2.Location = new Point(pictureBox2.Location.X, pictureBox2.Location.Y + 10);
+                pictureBox2.Location = new Point(pictureBox2.Location.X, pictureBox2.Location.Y + 20);
             }
             else if (direction == "left")
             {
-                pictureBox2.Location = new Point(pictureBox2.Location.X - 10, pictureBox2.Location.Y);
+                pictureBox2.Location = new Point(pictureBox2.Location.X - 20, pictureBox2.Location.Y);
             }
             else if (direction == "right")
             {
-                pictureBox2.Location = new Point(pictureBox2.Location.X + 10, pictureBox2.Location.Y);
+                pictureBox2.Location = new Point(pictureBox2.Location.X + 20, pictureBox2.Location.Y);
 
             }
 
             if (pictureBox1.Bounds.IntersectsWith(pictureBox2.Bounds))
             {
+                score++;
+                label3.Text = score.ToString();
                 Random rnd = new Random();
                 int cherryX = rnd.Next(panel1.Width - 35); // -35 so it doesnt appear outside the panel sometimes, since the location is of the top left corner 
                 int cherryY = rnd.Next(panel1.Height - 35);
                 pictureBox1.Location = new Point(cherryX, cherryY);
+            }
+
+            if (pictureBox2.Location.X < -17)
+            {
+                pictureBox2.Location = new Point(panel1.Width, pictureBox2.Location.Y);
+            } 
+            else if (pictureBox2.Location.X > panel1.Width - 17) // move when half of the picturebox is outside the bounds 
+            {
+                pictureBox2.Location = new Point(0, pictureBox2.Location.Y);
+            } 
+            else if (pictureBox2.Location.Y < -17)
+            {
+                pictureBox2.Location = new Point(pictureBox2.Location.X, panel1.Height);
+            }
+            else if (pictureBox2.Location.Y > panel1.Height -17)
+            {
+                pictureBox2.Location = new Point(pictureBox2.Location.X, 0);
             }
 
         }
