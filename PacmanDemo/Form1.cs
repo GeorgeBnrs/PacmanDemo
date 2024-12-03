@@ -15,7 +15,6 @@ namespace PacmanDemo
     {
         int msec = 0;
         string direction = "right";
-        Image originalImage = Properties.Resources.pacman_open;
 
         public Form1()
         {
@@ -67,36 +66,24 @@ namespace PacmanDemo
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
-            Image imgUp = originalImage;
-            imgUp.RotateFlip(RotateFlipType.Rotate270FlipNone);
-            Image imgDown = originalImage;
-            imgDown.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            Image imgLeft = originalImage;
-            imgLeft.RotateFlip(RotateFlipType.RotateNoneFlipX);
-
             switch (e.KeyCode)
             {
                 
                 case Keys.Up:
                     label2.Text = "Up";
                     direction = "up";
-                    pictureBox2.Image = imgUp;
                     break;
                 case Keys.Down:
                     label2.Text = "Down";
                     direction = "down";
-                    pictureBox2.Image = imgDown;
                     break;
                 case Keys.Left:
                     label2.Text = "Left";
                     direction = "left";
-                    pictureBox2.Image = imgLeft;
                     break;
                 case Keys.Right:
                     label2.Text = "Right";
                     direction = "right";
-                    pictureBox2.Image = originalImage;
                     break;
             }
         }
