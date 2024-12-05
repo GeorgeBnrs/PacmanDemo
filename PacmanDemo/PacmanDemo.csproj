@@ -81,10 +81,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pacman-open.png" />
+    <None Include="Resources\cherry1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cherry1.png" />
+    <None Include="Resources\pacman-closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pacman-open-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pacman-open-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pacman-open-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pacman-open-up.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

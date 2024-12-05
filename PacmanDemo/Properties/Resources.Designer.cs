@@ -73,9 +73,49 @@ namespace PacmanDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pacman_open {
+        internal static System.Drawing.Bitmap pacman_closed {
             get {
-                object obj = ResourceManager.GetObject("pacman-open", resourceCulture);
+                object obj = ResourceManager.GetObject("pacman-closed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pacman_open_down {
+            get {
+                object obj = ResourceManager.GetObject("pacman-open-down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pacman_open_left {
+            get {
+                object obj = ResourceManager.GetObject("pacman-open-left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pacman_open_right {
+            get {
+                object obj = ResourceManager.GetObject("pacman-open-right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pacman_open_up {
+            get {
+                object obj = ResourceManager.GetObject("pacman-open-up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

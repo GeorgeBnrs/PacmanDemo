@@ -33,11 +33,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,7 +56,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::PacmanDemo.Properties.Resources.pacman_open;
+            this.pictureBox2.Image = global::PacmanDemo.Properties.Resources.pacman_open_right;
             this.pictureBox2.Location = new System.Drawing.Point(76, 29);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
@@ -85,6 +85,15 @@
             this.panel2.Size = new System.Drawing.Size(1309, 57);
             this.panel2.TabIndex = 1;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(146, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "score";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -111,15 +120,6 @@
             // timer2
             // 
             this.timer2.Interval = 4000;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(146, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "score";
             // 
             // Form1
             // 

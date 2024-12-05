@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PacmanDemo.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace PacmanDemo
         int score = 0;
         int msec = 0;
         string direction = "right";
+        bool open = true;
 
         public Form1()
         {
@@ -30,6 +32,7 @@ namespace PacmanDemo
             
             msec++;
             updateTimer(msec);
+            updateImage();
             if (direction == "up")
             {
                 pictureBox2.Location = new Point(pictureBox2.Location.X, pictureBox2.Location.Y - 20);
@@ -86,6 +89,24 @@ namespace PacmanDemo
             label1.Text = mins.ToString() + " : " + secs.ToString() + " : " + msecs.ToString();
         }
 
+        private void updateImage()
+        {
+            Dictionary<String, Bitmap> images = new Dictionary<String, Bitmap>();
+            images.Add("up", Resources.pacman_open_up);
+            images.Add("right", Resources.pacman_open_right);
+            images.Add("down", Resources.pacman_open_down);
+            images.Add("left", Resources.pacman_open_left);
+            if (open)
+            {
+                pictureBox2.Image = Resources.pacman_closed;
+                open = false;
+            } else
+            {
+                pictureBox2.Image = images[direction];
+                open = true;
+            }
+        }
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -94,6 +115,7 @@ namespace PacmanDemo
                 case Keys.Up:
                     label2.Text = "Up";
                     direction = "up";
+                    
                     break;
                 case Keys.Down:
                     label2.Text = "Down";
