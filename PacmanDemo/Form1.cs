@@ -29,7 +29,7 @@ namespace PacmanDemo
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+               
             msec++;
             updateTimer(msec);
             updateImage();
@@ -54,27 +54,28 @@ namespace PacmanDemo
 
             if (pictureBox1.Bounds.IntersectsWith(pictureBox2.Bounds))
             {
+                this.Focus();
                 score++;
                 label3.Text = score.ToString();
                 Random rnd = new Random();
-                int cherryX = rnd.Next(panel1.Width - 35); // -35 so it doesnt appear outside the panel sometimes, since the location is of the top left corner 
-                int cherryY = rnd.Next(panel1.Height - 35);
+                int cherryX = rnd.Next(panel1.Width - 32); // - 32 so it doesnt appear outside the panel sometimes, since the location is of the top left corner 
+                int cherryY = rnd.Next(panel1.Height - 32);
                 pictureBox1.Location = new Point(cherryX, cherryY);
             }
 
-            if (pictureBox2.Location.X < -17)
+            if (pictureBox2.Location.X < - 16)
             {
                 pictureBox2.Location = new Point(panel1.Width, pictureBox2.Location.Y);
             } 
-            else if (pictureBox2.Location.X > panel1.Width - 17) // move when half of the picturebox is outside the bounds 
+            else if (pictureBox2.Location.X > panel1.Width - 16) // move when half of the picturebox is outside the bounds 
             {
                 pictureBox2.Location = new Point(0, pictureBox2.Location.Y);
             } 
-            else if (pictureBox2.Location.Y < -17)
+            else if (pictureBox2.Location.Y < -16)
             {
                 pictureBox2.Location = new Point(pictureBox2.Location.X, panel1.Height);
             }
-            else if (pictureBox2.Location.Y > panel1.Height -17)
+            else if (pictureBox2.Location.Y > panel1.Height - 16)
             {
                 pictureBox2.Location = new Point(pictureBox2.Location.X, 0);
             }
@@ -103,10 +104,12 @@ namespace PacmanDemo
             } else
             {
                 pictureBox2.Image = images[direction];
+
                 open = true;
             }
         }
 
+        bool speedup = false;
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -129,7 +132,23 @@ namespace PacmanDemo
                     label2.Text = "Right";
                     direction = "right";
                     break;
+                case Keys.Space:
+                    if (speedup)
+                    {
+                        timer1.Interval = 100;
+                        speedup = false;
+                    } else
+                    {
+                        timer1.Interval = 50;
+                        speedup = true;
+                    }
+                    break;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = !timer1.Enabled;
         }
     }
 }
