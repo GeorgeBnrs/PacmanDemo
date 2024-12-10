@@ -29,8 +29,15 @@ namespace PacmanDemo
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-               
             msec++;
+            if (msec >= 101)
+            {
+                timer1.Stop();
+                timer2.Stop();
+                MessageBox.Show("Game ended, you gathered " + score.ToString() + " cherrys!");
+                this.Dispose();
+                
+            }
             updateTimer(msec);
             updateImage();
             if (direction == "up")
@@ -54,13 +61,9 @@ namespace PacmanDemo
 
             if (pictureBox1.Bounds.IntersectsWith(pictureBox2.Bounds))
             {
-                this.Focus();
                 score++;
                 label3.Text = score.ToString();
-                Random rnd = new Random();
-                int cherryX = rnd.Next(panel1.Width - 32); // - 32 so it doesnt appear outside the panel sometimes, since the location is of the top left corner 
-                int cherryY = rnd.Next(panel1.Height - 32);
-                pictureBox1.Location = new Point(cherryX, cherryY);
+                resetCherry();
             }
 
             if (pictureBox2.Location.X < - 16)
@@ -80,6 +83,16 @@ namespace PacmanDemo
                 pictureBox2.Location = new Point(pictureBox2.Location.X, 0);
             }
 
+        }
+
+        private void resetCherry()
+        {
+            Random rnd = new Random();
+            int cherryX = rnd.Next(panel1.Width - 32); // - 32 so it doesnt appear outside the panel sometimes, since the location is of the top left corner 
+            int cherryY = rnd.Next(panel1.Height - 32);
+            pictureBox1.Location = new Point(cherryX, cherryY);
+            timer2.Stop();
+            timer2.Start();
         }
 
         private void updateTimer(int msec)
@@ -149,6 +162,11 @@ namespace PacmanDemo
         private void button1_Click(object sender, EventArgs e)
         {
             timer1.Enabled = !timer1.Enabled;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            resetCherry();
         }
     }
 }
