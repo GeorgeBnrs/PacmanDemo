@@ -10,17 +10,23 @@ using System.Windows.Forms;
 
 namespace PacmanDemo
 {
-    public partial class Form2 : Form
+    public partial class Launcher : Form
     {
-        public Form2()
+        public Launcher()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Game form1 = new Game();
             form1.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.ShowDialog();
         }
     }
 }
