@@ -38,7 +38,7 @@ namespace PacmanDemo
         {
             
             msec++;
-            if (msec >= 101)
+            if (msec >= 1201)
             {
                 GameTimer.Stop();
                 CherryTimer.Stop();
@@ -87,10 +87,22 @@ namespace PacmanDemo
 
         private void resetCherry()
         {
+
             Random rnd = new Random();
             int cherryX = rnd.Next(GamePanel.Width - 32); // - 32 so it doesnt appear outside the panel sometimes, since the location is of the top left corner 
             int cherryY = rnd.Next(GamePanel.Height - 32);
+            cherry.Visible = false;
             cherry.Location = new Point(cherryX, cherryY);
+            foreach (Control control in GamePanel.Controls)
+            {
+                while (cherry.Bounds.IntersectsWith(control.Bounds) && (control.Name != "cherry")) 
+                {
+                    cherryX = rnd.Next(GamePanel.Width - 32);
+                    cherryY = rnd.Next(GamePanel.Height - 32);
+                    cherry.Location = new Point(cherryX, cherryY);
+                }
+            }
+            cherry.Visible = true;
             CherryTimer.Stop();
             CherryTimer.Start();
         }
