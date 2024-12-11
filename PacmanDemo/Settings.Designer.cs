@@ -90,7 +90,7 @@
             this.GamePanelSizePlus.TabIndex = 5;
             this.GamePanelSizePlus.Text = "+";
             this.GamePanelSizePlus.UseVisualStyleBackColor = true;
-            this.GamePanelSizePlus.Click += new System.EventHandler(this.checkCustom);
+            this.GamePanelSizePlus.Click += new System.EventHandler(this.GamePanelSizePlus_Click);
             // 
             // GamePanelSizeMinus
             // 
@@ -102,7 +102,7 @@
             this.GamePanelSizeMinus.TabIndex = 6;
             this.GamePanelSizeMinus.Text = "-";
             this.GamePanelSizeMinus.UseVisualStyleBackColor = true;
-            this.GamePanelSizeMinus.Click += new System.EventHandler(this.checkCustom);
+            this.GamePanelSizeMinus.Click += new System.EventHandler(this.GamePanelSizeMinus_Click);
             // 
             // EasyRadioButton
             // 
@@ -180,7 +180,7 @@
             this.CherryRespawnRateMinus.TabIndex = 15;
             this.CherryRespawnRateMinus.Text = "-";
             this.CherryRespawnRateMinus.UseVisualStyleBackColor = true;
-            this.CherryRespawnRateMinus.Click += new System.EventHandler(this.checkCustom);
+            this.CherryRespawnRateMinus.Click += new System.EventHandler(this.CherryRespawnRateMinus_Click);
             // 
             // CherryRespawnRatePlus
             // 
@@ -191,7 +191,7 @@
             this.CherryRespawnRatePlus.TabIndex = 14;
             this.CherryRespawnRatePlus.Text = "+";
             this.CherryRespawnRatePlus.UseVisualStyleBackColor = true;
-            this.CherryRespawnRatePlus.Click += new System.EventHandler(this.checkCustom);
+            this.CherryRespawnRatePlus.Click += new System.EventHandler(this.CherryRespawnRatePlus_Click);
             // 
             // CherryRespawnRateLabel
             // 
@@ -232,7 +232,7 @@
             this.PacmanSpeedMinus.TabIndex = 20;
             this.PacmanSpeedMinus.Text = "-";
             this.PacmanSpeedMinus.UseVisualStyleBackColor = true;
-            this.PacmanSpeedMinus.Click += new System.EventHandler(this.checkCustom);
+            this.PacmanSpeedMinus.Click += new System.EventHandler(this.PacmanSpeedMinus_Click);
             // 
             // PacmanSpeedPlus
             // 
@@ -243,7 +243,7 @@
             this.PacmanSpeedPlus.TabIndex = 19;
             this.PacmanSpeedPlus.Text = "+";
             this.PacmanSpeedPlus.UseVisualStyleBackColor = true;
-            this.PacmanSpeedPlus.Click += new System.EventHandler(this.checkCustom);
+            this.PacmanSpeedPlus.Click += new System.EventHandler(this.PacmanSpeedPlus_Click);
             // 
             // PacmanSpeedLabel
             // 

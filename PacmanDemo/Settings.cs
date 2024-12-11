@@ -90,12 +90,9 @@ namespace PacmanDemo
             }
         }
 
-        private void checkCustom(object sender, EventArgs e)
+        private void GamePanelSizeMinus_Click(object sender, EventArgs e)
         {
             CustomRadioButton.Checked = true;
-        }
-        private void GamePanelHeightMinus_Click(object sender, EventArgs e)
-        {
             if (svalues.GamePanelSize > 1)
             {
                 GamePanelSizePlus.Enabled = true;
@@ -108,8 +105,9 @@ namespace PacmanDemo
             }
         }
 
-        private void GamePanelHeightPlus_Click(object sender, EventArgs e)
+        private void GamePanelSizePlus_Click(object sender, EventArgs e)
         {
+            CustomRadioButton.Checked = true;
             if (svalues.GamePanelSize < 3)
             {
                 GamePanelSizeMinus.Enabled = true;
@@ -125,6 +123,7 @@ namespace PacmanDemo
 
         private void CherryRespawnRateMinus_Click(object sender, EventArgs e)
         {
+            CustomRadioButton.Checked = true;
             if (svalues.CherryRespawnTime > 4)
             {
                 CherryRespawnRatePlus.Enabled = true;
@@ -139,6 +138,7 @@ namespace PacmanDemo
 
         private void CherryRespawnRatePlus_Click(object sender, EventArgs e)
         {
+            CustomRadioButton.Checked = true;
             if (svalues.CherryRespawnTime < 8)
             {
                 CherryRespawnRateMinus.Enabled = true;
@@ -153,6 +153,7 @@ namespace PacmanDemo
 
         private void PacmanSpeedMinus_Click(object sender, EventArgs e)
         {
+            CustomRadioButton.Checked = true;
             if (svalues.PacmanSpeed > 20)
             {
                 PacmanSpeedPlus.Enabled = true;
@@ -167,6 +168,7 @@ namespace PacmanDemo
 
         private void PacmanSpeedPlus_Click(object sender, EventArgs e)
         {
+            CustomRadioButton.Checked = true;
             if (svalues.PacmanSpeed < 30)
             {
                 PacmanSpeedMinus.Enabled = true;
