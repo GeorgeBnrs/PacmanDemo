@@ -64,11 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameLVL1.cs">
+    <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameLVL1.Designer.cs">
-      <DependentUpon>GameLVL1.cs</DependentUpon>
+    <Compile Include="Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
     </Compile>
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
@@ -84,11 +84,9 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameUtils.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <EmbeddedResource Include="GameLVL1.resx">
-      <DependentUpon>GameLVL1.cs</DependentUpon>
+    <Compile Include="GameUtils.cs" />
+    <EmbeddedResource Include="Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>

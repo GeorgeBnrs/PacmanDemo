@@ -47,7 +47,6 @@
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.CherryTimer = new System.Windows.Forms.Timer(this.components);
             this.PacmanTimer = new System.Windows.Forms.Timer(this.components);
-            this.CollisionTimer = new System.Windows.Forms.Timer(this.components);
             this.GamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -163,7 +162,7 @@
             // pacman
             // 
             this.pacman.Image = global::PacmanDemo.Properties.Resources.pacman_open_border_new;
-            this.pacman.Location = new System.Drawing.Point(171, 259);
+            this.pacman.Location = new System.Drawing.Point(53, 243);
             this.pacman.Name = "pacman";
             this.pacman.Size = new System.Drawing.Size(50, 50);
             this.pacman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -208,6 +207,7 @@
             this.DirectionLabel.Size = new System.Drawing.Size(47, 13);
             this.DirectionLabel.TabIndex = 1;
             this.DirectionLabel.Text = "direction";
+            this.DirectionLabel.Visible = false;
             // 
             // GameTimerLabel
             // 
@@ -232,22 +232,19 @@
             // PacmanTimer
             // 
             this.PacmanTimer.Enabled = true;
+            this.PacmanTimer.Interval = 10;
             this.PacmanTimer.Tick += new System.EventHandler(this.PacmanTimer_Tick);
             // 
-            // CollisionTimer
-            // 
-            this.CollisionTimer.Enabled = true;
-            this.CollisionTimer.Tick += new System.EventHandler(this.CollisionTimer_Tick);
-            // 
-            // GameLVL1
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1243, 829);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.GamePanel);
-            this.Name = "GameLVL1";
+            this.Name = "Game";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Game_Load);
             this.GamePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -269,7 +266,6 @@
         internal System.Windows.Forms.Timer GameTimer;
         internal System.Windows.Forms.Timer CherryTimer;
         internal System.Windows.Forms.Timer PacmanTimer;
-        internal System.Windows.Forms.Timer CollisionTimer;
         internal System.Windows.Forms.Label GameTimerLabel;
         internal System.Windows.Forms.Label DirectionLabel;
         internal System.Windows.Forms.Label ScoreLabel;

@@ -55,15 +55,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 167);
+            this.label1.Location = new System.Drawing.Point(14, 481);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Game Panel Size";
+            this.label1.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(734, 595);
+            this.button1.Location = new System.Drawing.Point(58, 595);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 45);
             this.button1.TabIndex = 2;
@@ -75,33 +76,36 @@
             // 
             this.GamePanelSizeLabel.AutoSize = true;
             this.GamePanelSizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GamePanelSizeLabel.Location = new System.Drawing.Point(54, 194);
+            this.GamePanelSizeLabel.Location = new System.Drawing.Point(57, 508);
             this.GamePanelSizeLabel.Name = "GamePanelSizeLabel";
             this.GamePanelSizeLabel.Size = new System.Drawing.Size(20, 24);
             this.GamePanelSizeLabel.TabIndex = 4;
             this.GamePanelSizeLabel.Text = "0";
+            this.GamePanelSizeLabel.Visible = false;
             // 
             // GamePanelSizePlus
             // 
             this.GamePanelSizePlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GamePanelSizePlus.Location = new System.Drawing.Point(80, 190);
+            this.GamePanelSizePlus.Location = new System.Drawing.Point(83, 504);
             this.GamePanelSizePlus.Name = "GamePanelSizePlus";
             this.GamePanelSizePlus.Size = new System.Drawing.Size(35, 35);
             this.GamePanelSizePlus.TabIndex = 5;
             this.GamePanelSizePlus.Text = "+";
             this.GamePanelSizePlus.UseVisualStyleBackColor = true;
+            this.GamePanelSizePlus.Visible = false;
             this.GamePanelSizePlus.Click += new System.EventHandler(this.GamePanelSizePlus_Click);
             // 
             // GamePanelSizeMinus
             // 
             this.GamePanelSizeMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GamePanelSizeMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.GamePanelSizeMinus.Location = new System.Drawing.Point(12, 190);
+            this.GamePanelSizeMinus.Location = new System.Drawing.Point(15, 504);
             this.GamePanelSizeMinus.Name = "GamePanelSizeMinus";
             this.GamePanelSizeMinus.Size = new System.Drawing.Size(35, 35);
             this.GamePanelSizeMinus.TabIndex = 6;
             this.GamePanelSizeMinus.Text = "-";
             this.GamePanelSizeMinus.UseVisualStyleBackColor = true;
+            this.GamePanelSizeMinus.Visible = false;
             this.GamePanelSizeMinus.Click += new System.EventHandler(this.GamePanelSizeMinus_Click);
             // 
             // EasyRadioButton
@@ -132,11 +136,12 @@
             // sep1
             // 
             this.sep1.AutoSize = true;
-            this.sep1.Location = new System.Drawing.Point(12, 142);
+            this.sep1.Location = new System.Drawing.Point(15, 456);
             this.sep1.Name = "sep1";
             this.sep1.Size = new System.Drawing.Size(214, 13);
             this.sep1.TabIndex = 9;
             this.sep1.Text = "---------------------------------------------------------------------";
+            this.sep1.Visible = false;
             // 
             // label3
             // 
@@ -164,7 +169,7 @@
             // sep2
             // 
             this.sep2.AutoSize = true;
-            this.sep2.Location = new System.Drawing.Point(12, 245);
+            this.sep2.Location = new System.Drawing.Point(12, 134);
             this.sep2.Name = "sep2";
             this.sep2.Size = new System.Drawing.Size(214, 13);
             this.sep2.TabIndex = 16;
@@ -174,7 +179,7 @@
             // 
             this.CherryRespawnRateMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CherryRespawnRateMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CherryRespawnRateMinus.Location = new System.Drawing.Point(12, 293);
+            this.CherryRespawnRateMinus.Location = new System.Drawing.Point(12, 182);
             this.CherryRespawnRateMinus.Name = "CherryRespawnRateMinus";
             this.CherryRespawnRateMinus.Size = new System.Drawing.Size(35, 35);
             this.CherryRespawnRateMinus.TabIndex = 15;
@@ -185,7 +190,7 @@
             // CherryRespawnRatePlus
             // 
             this.CherryRespawnRatePlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CherryRespawnRatePlus.Location = new System.Drawing.Point(80, 293);
+            this.CherryRespawnRatePlus.Location = new System.Drawing.Point(80, 182);
             this.CherryRespawnRatePlus.Name = "CherryRespawnRatePlus";
             this.CherryRespawnRatePlus.Size = new System.Drawing.Size(35, 35);
             this.CherryRespawnRatePlus.TabIndex = 14;
@@ -197,7 +202,7 @@
             // 
             this.CherryRespawnRateLabel.AutoSize = true;
             this.CherryRespawnRateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CherryRespawnRateLabel.Location = new System.Drawing.Point(54, 297);
+            this.CherryRespawnRateLabel.Location = new System.Drawing.Point(54, 186);
             this.CherryRespawnRateLabel.Name = "CherryRespawnRateLabel";
             this.CherryRespawnRateLabel.Size = new System.Drawing.Size(20, 24);
             this.CherryRespawnRateLabel.TabIndex = 13;
@@ -207,7 +212,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 270);
+            this.label5.Location = new System.Drawing.Point(11, 159);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(204, 20);
             this.label5.TabIndex = 12;
@@ -216,7 +221,7 @@
             // sep3
             // 
             this.sep3.AutoSize = true;
-            this.sep3.Location = new System.Drawing.Point(12, 345);
+            this.sep3.Location = new System.Drawing.Point(12, 234);
             this.sep3.Name = "sep3";
             this.sep3.Size = new System.Drawing.Size(214, 13);
             this.sep3.TabIndex = 21;
@@ -226,7 +231,7 @@
             // 
             this.PacmanSpeedMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PacmanSpeedMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PacmanSpeedMinus.Location = new System.Drawing.Point(12, 393);
+            this.PacmanSpeedMinus.Location = new System.Drawing.Point(12, 282);
             this.PacmanSpeedMinus.Name = "PacmanSpeedMinus";
             this.PacmanSpeedMinus.Size = new System.Drawing.Size(35, 35);
             this.PacmanSpeedMinus.TabIndex = 20;
@@ -237,7 +242,7 @@
             // PacmanSpeedPlus
             // 
             this.PacmanSpeedPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PacmanSpeedPlus.Location = new System.Drawing.Point(90, 393);
+            this.PacmanSpeedPlus.Location = new System.Drawing.Point(80, 284);
             this.PacmanSpeedPlus.Name = "PacmanSpeedPlus";
             this.PacmanSpeedPlus.Size = new System.Drawing.Size(35, 35);
             this.PacmanSpeedPlus.TabIndex = 19;
@@ -249,17 +254,17 @@
             // 
             this.PacmanSpeedLabel.AutoSize = true;
             this.PacmanSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PacmanSpeedLabel.Location = new System.Drawing.Point(54, 397);
+            this.PacmanSpeedLabel.Location = new System.Drawing.Point(54, 286);
             this.PacmanSpeedLabel.Name = "PacmanSpeedLabel";
-            this.PacmanSpeedLabel.Size = new System.Drawing.Size(30, 24);
+            this.PacmanSpeedLabel.Size = new System.Drawing.Size(20, 24);
             this.PacmanSpeedLabel.TabIndex = 18;
-            this.PacmanSpeedLabel.Text = "00";
+            this.PacmanSpeedLabel.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(11, 370);
+            this.label7.Location = new System.Drawing.Point(11, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 20);
             this.label7.TabIndex = 17;
@@ -282,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 652);
+            this.ClientSize = new System.Drawing.Size(261, 652);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.sep3);
             this.Controls.Add(this.PacmanSpeedMinus);

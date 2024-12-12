@@ -44,7 +44,7 @@ namespace PacmanDemo
             }
             else if (svalues.Preset == "custom")
             {
-                updateAll();
+                CustomRadioButton.Checked = true;
             }
         }
 
@@ -78,12 +78,12 @@ namespace PacmanDemo
                 CherryRespawnRateMinus.Enabled = true;
             }
 
-            if (svalues.PacmanSpeed == 20)
+            if (svalues.PacmanSpeed == 2)
             {
                 PacmanSpeedPlus.Enabled = true;
                 PacmanSpeedMinus.Enabled = false;
             }
-            else if (svalues.PacmanSpeed == 30)
+            else if (svalues.PacmanSpeed == 4)
             {
                 PacmanSpeedPlus.Enabled = false;
                 PacmanSpeedMinus.Enabled = true;
@@ -154,12 +154,12 @@ namespace PacmanDemo
         private void PacmanSpeedMinus_Click(object sender, EventArgs e)
         {
             CustomRadioButton.Checked = true;
-            if (svalues.PacmanSpeed > 20)
+            if (svalues.PacmanSpeed > 2)
             {
                 PacmanSpeedPlus.Enabled = true;
-                svalues.PacmanSpeed -= 5;
+                svalues.PacmanSpeed -= 1;
                 PacmanSpeedLabel.Text = svalues.PacmanSpeed.ToString();
-                if (svalues.PacmanSpeed == 20)
+                if (svalues.PacmanSpeed == 2)
                 {
                     PacmanSpeedMinus.Enabled = false;
                 }
@@ -169,12 +169,12 @@ namespace PacmanDemo
         private void PacmanSpeedPlus_Click(object sender, EventArgs e)
         {
             CustomRadioButton.Checked = true;
-            if (svalues.PacmanSpeed < 30)
+            if (svalues.PacmanSpeed < 4)
             {
                 PacmanSpeedMinus.Enabled = true;
-                svalues.PacmanSpeed += 5;
+                svalues.PacmanSpeed += 1;
                 PacmanSpeedLabel.Text = svalues.PacmanSpeed.ToString();
-                if (svalues.PacmanSpeed == 30)
+                if (svalues.PacmanSpeed == 4)
                 {
                     PacmanSpeedPlus.Enabled = false;
                 }
@@ -188,7 +188,7 @@ namespace PacmanDemo
                 svalues.Preset = "easy";
                 svalues.GamePanelSize = 1;
                 svalues.CherryRespawnTime = 8;
-                svalues.PacmanSpeed = 30;
+                svalues.PacmanSpeed = 3;
                 updateAll();
             }
             else if (HardRadioButton.Checked)
@@ -196,7 +196,7 @@ namespace PacmanDemo
                 svalues.Preset = "hard";
                 svalues.GamePanelSize = 3;
                 svalues.CherryRespawnTime = 4;
-                svalues.PacmanSpeed = 20;
+                svalues.PacmanSpeed = 2;
                 updateAll();
             } 
             else if (CustomRadioButton.Checked)
@@ -209,6 +209,7 @@ namespace PacmanDemo
         private void button1_Click(object sender, EventArgs e)
         {
             File.WriteAllText("settings.json", JsonConvert.SerializeObject(svalues));
+            this.Dispose();
         }
     }
 
@@ -224,7 +225,7 @@ namespace PacmanDemo
             Preset = "easy";
             GamePanelSize = 1;
             CherryRespawnTime = 8;
-            PacmanSpeed = 30;
+            PacmanSpeed = 3;
         }
     }
 
