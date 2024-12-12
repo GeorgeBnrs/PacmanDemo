@@ -24,95 +24,34 @@ namespace PacmanDemo
         public Game()
         {
             InitializeComponent();
+            // rename all walls to "wall", since visual studio doesnt like us changing the names of components without changing the name of the variables 
+            foreach (PictureBox wall in GamePanel.Controls.OfType<PictureBox>())
+            {
+
+                if ((wall.Name != "cherry") && (wall.Name != "pacman"))
+                {
+                    wall.Name = "wall";
+                }
+            }
             this.KeyPreview = true;
             this.KeyDown += Form1_KeyDown;
         }
 
-        private void GenerateLevel()
-        {
-
-        }
-
-
         private void GameTimer_Tick(object sender, EventArgs e)
         {
-            
             msec++;
-            if (msec >= 1201)
-            {
-                GameTimer.Stop();
-                CherryTimer.Stop();
-                PacmanTimer.Stop();
-                MessageBox.Show("Game ended, you gathered " + score.ToString() + " cherrys!");
-                this.Dispose();
-                
-            }
+            GameUtils.EndGame();
             updateTimer(msec);
-            updateImage();
-
-
-            foreach(Control control in GamePanel.Controls)
-            {
-                if (pacman.Bounds.IntersectsWith(control.Bounds))
-                {
-                    if (control.Name == "cherry")
-                    {
-                        score++;
-                        ScoreLabel.Text = score.ToString();
-                        resetCherry();
-                    } else if (control.Name != "pacman") // wall "bounce", excluding ofcourse the pacman itself
-                    {
-                        if (direction == "up")
-                        {
-                            pacman.Location = new Point(pacman.Location.X, pacman.Location.Y + 20); // move down
-                        }
-                        else if (direction == "down")
-                        {
-                            pacman.Location = new Point(pacman.Location.X, pacman.Location.Y - 20); // move up
-                        }
-                        else if (direction == "left")
-                        {
-                            pacman.Location = new Point(pacman.Location.X + 20, pacman.Location.Y); // move right
-                        }
-                        else if (direction == "right")
-                        {
-                            pacman.Location = new Point(pacman.Location.X - 20, pacman.Location.Y); // move left
-                        }
-                    }
-                }
-            }
-
-
         }
 
-        private void resetCherry()
-        {
 
-            Random rnd = new Random();
-            int cherryX = rnd.Next(GamePanel.Width - 32); // - 32 so it doesnt appear outside the panel sometimes, since the location is of the top left corner 
-            int cherryY = rnd.Next(GamePanel.Height - 32);
-            cherry.Visible = false;
-            cherry.Location = new Point(cherryX, cherryY);
-            foreach (Control control in GamePanel.Controls)
-            {
-                while (cherry.Bounds.IntersectsWith(control.Bounds) && (control.Name != "cherry")) 
-                {
-                    cherryX = rnd.Next(GamePanel.Width - 32);
-                    cherryY = rnd.Next(GamePanel.Height - 32);
-                    cherry.Location = new Point(cherryX, cherryY);
-                }
-            }
-            cherry.Visible = true;
-            CherryTimer.Stop();
-            CherryTimer.Start();
-        }
 
         private void updateTimer(int msec)
         {
             int mins = msec / 600;
             int secs = msec / 10 - (mins * 60);
             int msecs = msec - (mins * 600) - (secs * 10);
-            GameTimerLAbel.Text = mins.ToString() + " : " + secs.ToString() + " : " + msecs.ToString();
+            GameTimerLabel.Text = mins.ToString() + " : " + secs.ToString() + " : " + msecs.ToString();
         }
 
         private void updateImage()
@@ -142,30 +81,22 @@ namespace PacmanDemo
                 case Keys.Up:
                     DirectionLabel.Text = "Up";
                     direction = "up";
-                    
+                    PacmanTimer.Enabled = true;
                     break;
                 case Keys.Down:
                     DirectionLabel.Text = "Down";
                     direction = "down";
+                    PacmanTimer.Enabled = true;
                     break;
                 case Keys.Left:
                     DirectionLabel.Text = "Left";
                     direction = "left";
+                    PacmanTimer.Enabled = true;
                     break;
                 case Keys.Right:
                     DirectionLabel.Text = "Right";
                     direction = "right";
-                    break;
-                case Keys.Space:
-                    if (speedup)
-                    {
-                        GameTimer.Interval = 100;
-                        speedup = false;
-                    } else
-                    {
-                        GameTimer.Interval = 50;
-                        speedup = true;
-                    }
+                    PacmanTimer.Enabled = true;
                     break;
                 case Keys.Escape:
                     GameTimer.Enabled = !GameTimer.Enabled;
@@ -182,11 +113,13 @@ namespace PacmanDemo
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            resetCherry();
+            GameUtils.ResetCherry();
         }
 
         private void PacmanTimer_Tick(object sender, EventArgs e)
         {
+            updateImage();
+
             // direction wrapping
             if (pacman.Location.X < -16)
             {
@@ -225,6 +158,11 @@ namespace PacmanDemo
                 pacman.Location = new Point(pacman.Location.X + 20, pacman.Location.Y);
 
             }
+        }
+
+        private void CollisionTimer_Tick(object sender, EventArgs e)
+        {
+            GameUtils.CheckCollision();
         }
     }
 }

@@ -19,8 +19,9 @@ namespace PacmanDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Game form1 = new Game();
-            form1.ShowDialog();
+            new GameUtils();
+            //GameLVL1 form1 = new GameLVL1();
+            //form1.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
