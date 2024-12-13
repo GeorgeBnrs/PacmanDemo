@@ -55,7 +55,7 @@ namespace PacmanDemo
         private void updateAll()
         {
             // Label values
-            GamePanelSizeLabel.Text = svalues.GamePanelSize.ToString();
+            //GamePanelSizeLabel.Text = svalues.GamePanelSize.ToString();
             CherryRespawnRateLabel.Text = svalues.CherryRespawnTime.ToString();
             PacmanSpeedLabel.Text = svalues.PacmanSpeed.ToString();
 
@@ -83,16 +83,16 @@ namespace PacmanDemo
 
 
             // Disable the correct buttons
-            if (svalues.GamePanelSize == 1)
-            {
-                GamePanelSizePlus.Enabled = true;
-                GamePanelSizeMinus.Enabled = false;
-            }
-            else if (svalues.GamePanelSize == 3)
-            {
-                GamePanelSizePlus.Enabled = false;
-                GamePanelSizeMinus.Enabled = true;
-            }
+            //if (svalues.GamePanelSize == 1)
+            //{
+            //    GamePanelSizePlus.Enabled = true;
+            //    GamePanelSizeMinus.Enabled = false;
+            //}
+            //else if (svalues.GamePanelSize == 3)
+            //{
+            //    GamePanelSizePlus.Enabled = false;
+            //    GamePanelSizeMinus.Enabled = true;
+            //}
 
             if (svalues.CherryRespawnTime == 4)
             {
@@ -117,36 +117,36 @@ namespace PacmanDemo
             }
         }
 
-        private void GamePanelSizeMinus_Click(object sender, EventArgs e)
-        {
-            CustomRadioButton.Checked = true;
-            if (svalues.GamePanelSize > 1)
-            {
-                GamePanelSizePlus.Enabled = true;
-                svalues.GamePanelSize -= 1;
-                GamePanelSizeLabel.Text = svalues.GamePanelSize.ToString();
-                if (svalues.GamePanelSize == 1)
-                {
-                    GamePanelSizeMinus.Enabled = false;
-                }
-            }
-        }
+        //private void GamePanelSizeMinus_Click(object sender, EventArgs e)
+        //{
+        //    CustomRadioButton.Checked = true;
+        //    if (svalues.GamePanelSize > 1)
+        //    {
+        //        GamePanelSizePlus.Enabled = true;
+        //        svalues.GamePanelSize -= 1;
+        //        GamePanelSizeLabel.Text = svalues.GamePanelSize.ToString();
+        //        if (svalues.GamePanelSize == 1)
+        //        {
+        //            GamePanelSizeMinus.Enabled = false;
+        //        }
+        //    }
+        //}
 
-        private void GamePanelSizePlus_Click(object sender, EventArgs e)
-        {
-            CustomRadioButton.Checked = true;
-            if (svalues.GamePanelSize < 3)
-            {
-                GamePanelSizeMinus.Enabled = true;
-                svalues.GamePanelSize += 1;
-                GamePanelSizeLabel.Text = svalues.GamePanelSize.ToString();
-                if (svalues.GamePanelSize == 3)
-                {
-                    GamePanelSizePlus.Enabled = false;
-                }
-            } 
+        //private void GamePanelSizePlus_Click(object sender, EventArgs e)
+        //{
+        //    CustomRadioButton.Checked = true;
+        //    if (svalues.GamePanelSize < 3)
+        //    {
+        //        GamePanelSizeMinus.Enabled = true;
+        //        svalues.GamePanelSize += 1;
+        //        GamePanelSizeLabel.Text = svalues.GamePanelSize.ToString();
+        //        if (svalues.GamePanelSize == 3)
+        //        {
+        //            GamePanelSizePlus.Enabled = false;
+        //        }
+        //    }
 
-        }
+        //}
 
         private void CherryRespawnRateMinus_Click(object sender, EventArgs e)
         {
@@ -214,7 +214,7 @@ namespace PacmanDemo
             {
                 Console.WriteLine("easy");
                 svalues.Preset = "easy";
-                svalues.GamePanelSize = 1;
+                //svalues.GamePanelSize = 1;
                 svalues.CherryRespawnTime = 8;
                 svalues.PacmanSpeed = 3;
                 svalues.DeadlyWalls = false;
@@ -225,7 +225,7 @@ namespace PacmanDemo
             {
                 Console.WriteLine("hard");
                 svalues.Preset = "hard";
-                svalues.GamePanelSize = 3;
+                //svalues.GamePanelSize = 3;
                 svalues.CherryRespawnTime = 4;
                 svalues.PacmanSpeed = 2;
                 svalues.DeadlyWalls = true;
@@ -283,7 +283,7 @@ namespace PacmanDemo
     internal class SettingsValues
     {
         public string Preset {  get; set; }
-        public int GamePanelSize {  get; set; }
+        //public int GamePanelSize {  get; set; }
         public int CherryRespawnTime { get; set; }
         public int PacmanSpeed { get; set; }
         public bool DirectionWrapping { get; set; }
@@ -291,7 +291,7 @@ namespace PacmanDemo
         public SettingsValues() 
         {
             Preset = "easy";
-            GamePanelSize = 1;
+            //GamePanelSize = 1;
             CherryRespawnTime = 8;
             PacmanSpeed = 3;
             DeadlyWalls = false;

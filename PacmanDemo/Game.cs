@@ -26,6 +26,10 @@ namespace PacmanDemo
         public Game()
         {
             InitializeComponent();
+            Text = "Pacman";
+            FormClosing += Game_Closing;
+            KeyPreview = true;
+            KeyDown += Form1_KeyDown;
         }
 
         private void Game_Load(object sender, EventArgs e)
@@ -38,8 +42,7 @@ namespace PacmanDemo
                     wall.Name = "wall";
                 }
             }
-            this.KeyPreview = true;
-            this.KeyDown += Form1_KeyDown;
+            
             // load settings
             try
             {
@@ -53,17 +56,22 @@ namespace PacmanDemo
             CherryTimer.Interval = svalues.CherryRespawnTime * 1000;
         }
 
+        private void Game_Closing(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
         private void GameTimer_Tick(object sender, EventArgs e)
         {
             msec++;
             //
             // TODO: VARIABLE TIME
             //
-            if (msec >= 1201)
+            if (msec >= 101)
             {
                 EndGame();
             }
-            updateTimer(msec);
+            UpdateTimer(msec);
             UpdateImage();
         }
 
@@ -97,7 +105,7 @@ namespace PacmanDemo
             CherryTimer.Start();
         }
 
-        private void updateTimer(int msec)
+        private void UpdateTimer(int msec)
         {
             int mins = msec / 600;
             int secs = msec / 10 - (mins * 60);
@@ -237,7 +245,7 @@ namespace PacmanDemo
                     if (pbox.Name == "cherry") // capture cherry 
                     {
                         score++;
-                        ScoreLabel.Text = score.ToString();
+                        ScoreLabel.Text = "Score: " +score.ToString();
                         ResetCherry();
                     }
                     else if (pbox.Name == "wall") // 

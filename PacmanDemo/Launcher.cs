@@ -15,14 +15,12 @@ namespace PacmanDemo
         public Launcher()
         {
             InitializeComponent();
+            this.Text = "Pacman Game Launcher";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             new Game().ShowDialog();
-
-            //GameLVL1 form1 = new GameLVL1();
-            //form1.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)

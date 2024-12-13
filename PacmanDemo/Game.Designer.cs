@@ -54,13 +54,13 @@
             this.pacman = new System.Windows.Forms.PictureBox();
             this.cherry = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.ScoreLabel = new System.Windows.Forms.Label();
             this.DirectionLabel = new System.Windows.Forms.Label();
             this.GameTimerLabel = new System.Windows.Forms.Label();
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.CherryTimer = new System.Windows.Forms.Timer(this.components);
             this.PacmanTimer = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.GamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
@@ -361,14 +361,24 @@
             this.panel2.Size = new System.Drawing.Size(1959, 57);
             this.panel2.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(549, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Deadly Walls";
+            this.label1.Visible = false;
+            // 
             // ScoreLabel
             // 
             this.ScoreLabel.AutoSize = true;
             this.ScoreLabel.Location = new System.Drawing.Point(146, 23);
             this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(33, 13);
+            this.ScoreLabel.Size = new System.Drawing.Size(47, 13);
             this.ScoreLabel.TabIndex = 2;
-            this.ScoreLabel.Text = "score";
+            this.ScoreLabel.Text = "Score: 0";
             // 
             // DirectionLabel
             // 
@@ -406,21 +416,11 @@
             this.PacmanTimer.Interval = 10;
             this.PacmanTimer.Tick += new System.EventHandler(this.PacmanTimer_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(549, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Deadly Walls";
-            this.label1.Visible = false;
-            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 825);
+            this.ClientSize = new System.Drawing.Size(998, 715);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.GamePanel);
             this.Name = "Game";

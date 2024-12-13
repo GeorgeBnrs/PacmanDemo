@@ -28,14 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.GamePanelSizeLabel = new System.Windows.Forms.Label();
-            this.GamePanelSizePlus = new System.Windows.Forms.Button();
-            this.GamePanelSizeMinus = new System.Windows.Forms.Button();
             this.EasyRadioButton = new System.Windows.Forms.RadioButton();
             this.HardRadioButton = new System.Windows.Forms.RadioButton();
-            this.sep1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.CustomRadioButton = new System.Windows.Forms.RadioButton();
             this.sep2 = new System.Windows.Forms.Label();
@@ -59,17 +54,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 616);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Game Panel Size";
-            this.label1.Visible = false;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(114, 694);
@@ -79,42 +63,6 @@
             this.button1.Text = "Save Settings";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // GamePanelSizeLabel
-            // 
-            this.GamePanelSizeLabel.AutoSize = true;
-            this.GamePanelSizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GamePanelSizeLabel.Location = new System.Drawing.Point(57, 643);
-            this.GamePanelSizeLabel.Name = "GamePanelSizeLabel";
-            this.GamePanelSizeLabel.Size = new System.Drawing.Size(20, 24);
-            this.GamePanelSizeLabel.TabIndex = 4;
-            this.GamePanelSizeLabel.Text = "0";
-            this.GamePanelSizeLabel.Visible = false;
-            // 
-            // GamePanelSizePlus
-            // 
-            this.GamePanelSizePlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GamePanelSizePlus.Location = new System.Drawing.Point(83, 639);
-            this.GamePanelSizePlus.Name = "GamePanelSizePlus";
-            this.GamePanelSizePlus.Size = new System.Drawing.Size(35, 35);
-            this.GamePanelSizePlus.TabIndex = 5;
-            this.GamePanelSizePlus.Text = "+";
-            this.GamePanelSizePlus.UseVisualStyleBackColor = true;
-            this.GamePanelSizePlus.Visible = false;
-            this.GamePanelSizePlus.Click += new System.EventHandler(this.GamePanelSizePlus_Click);
-            // 
-            // GamePanelSizeMinus
-            // 
-            this.GamePanelSizeMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GamePanelSizeMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.GamePanelSizeMinus.Location = new System.Drawing.Point(15, 639);
-            this.GamePanelSizeMinus.Name = "GamePanelSizeMinus";
-            this.GamePanelSizeMinus.Size = new System.Drawing.Size(35, 35);
-            this.GamePanelSizeMinus.TabIndex = 6;
-            this.GamePanelSizeMinus.Text = "-";
-            this.GamePanelSizeMinus.UseVisualStyleBackColor = true;
-            this.GamePanelSizeMinus.Visible = false;
-            this.GamePanelSizeMinus.Click += new System.EventHandler(this.GamePanelSizeMinus_Click);
             // 
             // EasyRadioButton
             // 
@@ -140,16 +88,6 @@
             this.HardRadioButton.Text = "Hard";
             this.HardRadioButton.UseVisualStyleBackColor = true;
             this.HardRadioButton.CheckedChanged += new System.EventHandler(this.CheckedChange);
-            // 
-            // sep1
-            // 
-            this.sep1.AutoSize = true;
-            this.sep1.Location = new System.Drawing.Point(15, 591);
-            this.sep1.Name = "sep1";
-            this.sep1.Size = new System.Drawing.Size(214, 13);
-            this.sep1.TabIndex = 9;
-            this.sep1.Text = "---------------------------------------------------------------------";
-            this.sep1.Visible = false;
             // 
             // label3
             // 
@@ -399,14 +337,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CustomRadioButton);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.sep1);
             this.Controls.Add(this.HardRadioButton);
             this.Controls.Add(this.EasyRadioButton);
-            this.Controls.Add(this.GamePanelSizeMinus);
-            this.Controls.Add(this.GamePanelSizePlus);
-            this.Controls.Add(this.GamePanelSizeLabel);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
             this.Name = "Settings";
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
@@ -416,14 +349,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label GamePanelSizeLabel;
-        private System.Windows.Forms.Button GamePanelSizePlus;
-        private System.Windows.Forms.Button GamePanelSizeMinus;
         private System.Windows.Forms.RadioButton EasyRadioButton;
         private System.Windows.Forms.RadioButton HardRadioButton;
-        private System.Windows.Forms.Label sep1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton CustomRadioButton;
         private System.Windows.Forms.Label sep2;
