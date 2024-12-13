@@ -398,7 +398,7 @@
             // 
             this.CherryTimer.Enabled = true;
             this.CherryTimer.Interval = 6000;
-            this.CherryTimer.Tick += new System.EventHandler(this.timer2_Tick);
+            this.CherryTimer.Tick += new System.EventHandler(this.CherryTimer_Tick);
             // 
             // PacmanTimer
             // 

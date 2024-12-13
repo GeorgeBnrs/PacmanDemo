@@ -21,7 +21,6 @@ namespace PacmanDemo
         int msec = 0;
         string direction = "right";
         bool open = true;
-        bool hard = false;
         SettingsValues svalues;
 
         public Game()
@@ -65,7 +64,7 @@ namespace PacmanDemo
                 EndGame();
             }
             updateTimer(msec);
-            updateImage();
+            UpdateImage();
         }
 
         private void EndGame()
@@ -106,7 +105,7 @@ namespace PacmanDemo
             GameTimerLabel.Text = mins.ToString() + " : " + secs.ToString() + " : " + msecs.ToString();
         }
 
-        private void updateImage()
+        private void UpdateImage()
         {
             Dictionary<string, Bitmap> images = new Dictionary<string, Bitmap>
             {
@@ -158,9 +157,29 @@ namespace PacmanDemo
             }
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
+        private void CherryTimer_Tick(object sender, EventArgs e)
         {
             ResetCherry();
+        }
+
+        private void MovePacman(string direction, int distance)
+        {
+            if (direction == "up")
+            {
+                pacman.Location = new Point(pacman.Location.X, pacman.Location.Y - distance);
+            } 
+            else if (direction == "down")
+            {
+                pacman.Location = new Point(pacman.Location.X, pacman.Location.Y + distance);
+            }
+            else if (direction == "left")
+            {
+                pacman.Location = new Point(pacman.Location.X - distance, pacman.Location.Y);
+            }
+            else if (direction == "right")
+            {
+                pacman.Location = new Point(pacman.Location.X + distance, pacman.Location.Y);
+            }
         }
 
         private void PacmanTimer_Tick(object sender, EventArgs e)
@@ -168,6 +187,7 @@ namespace PacmanDemo
             // direction wrapping
             if (svalues.DirectionWrapping)
             {
+                // Move to the opposite side
                 if (pacman.Location.X < 0) // left side
                 {
                     pacman.Location = new Point(GamePanel.Width, pacman.Location.Y);
@@ -186,78 +206,63 @@ namespace PacmanDemo
                 }
             } else
             {
+                // Stop pacman
                 if (pacman.Location.X < 0) // left side
                 {
-                    pacman.Location = new Point(pacman.Location.X + svalues.PacmanSpeed, pacman.Location.Y);
+                    MovePacman("right", svalues.PacmanSpeed);
                 }
                 else if (pacman.Location.X + 50 > GamePanel.Width) // right side, offset by the size of pacman, since location is calculated from the top left corner
                 {
-                    pacman.Location = new Point(pacman.Location.X - svalues.PacmanSpeed, pacman.Location.Y);
+                    MovePacman("left", svalues.PacmanSpeed);
                 } 
                 else if (pacman.Location.Y < 0) // top side
                 {
-                    pacman.Location = new Point(pacman.Location.X, pacman.Location.Y + svalues.PacmanSpeed);
+                    MovePacman("down", svalues.PacmanSpeed);
                 }
                 else if (pacman.Location.Y + 50 > GamePanel.Height) // bottom side
                 {
-                    pacman.Location = new Point(pacman.Location.X, pacman.Location.Y - svalues.PacmanSpeed);
+                    MovePacman("up", svalues.PacmanSpeed);
                 }
             }
 
 
 
             // move pacman
-            if (direction == "up")
-            {
-                pacman.Location = new Point(pacman.Location.X, pacman.Location.Y - svalues.PacmanSpeed);
-
-            }
-            else if (direction == "down")
-            {
-                pacman.Location = new Point(pacman.Location.X, pacman.Location.Y + svalues.PacmanSpeed);
-            }
-            else if (direction == "left")
-            {
-                pacman.Location = new Point(pacman.Location.X - svalues.PacmanSpeed, pacman.Location.Y);
-            }
-            else if (direction == "right")
-            {
-                pacman.Location = new Point(pacman.Location.X + svalues.PacmanSpeed, pacman.Location.Y);
-            }
+            MovePacman(direction, svalues.PacmanSpeed);
 
             foreach (PictureBox pbox in GamePanel.Controls.OfType<PictureBox>())
             {
                 if (pacman.Bounds.IntersectsWith(pbox.Bounds))
                 {
-                    if (pbox.Name == "cherry") // cherry 
+                    if (pbox.Name == "cherry") // capture cherry 
                     {
                         score++;
                         ScoreLabel.Text = score.ToString();
                         ResetCherry();
                     }
-                    else if (pbox.Name == "wall")  // wall
+                    else if (pbox.Name == "wall") // 
                     {
                         if (svalues.DeadlyWalls)
                         {
                             EndGame();
                         }
-                        else
+                        else // "Stop" pacman when hitting a wall
                         {
                             if (direction == "up")
                             {
-                                pacman.Location = new Point(pacman.Location.X, pacman.Location.Y + svalues.PacmanSpeed); // move down
+                                MovePacman("down", svalues.PacmanSpeed);
                             }
                             else if (direction == "down")
                             {
-                                pacman.Location = new Point(pacman.Location.X, pacman.Location.Y - svalues.PacmanSpeed); // move up
+                                MovePacman("up", svalues.PacmanSpeed);
                             }
                             else if (direction == "left")
                             {
-                                pacman.Location = new Point(pacman.Location.X + svalues.PacmanSpeed, pacman.Location.Y); // move right
+                                MovePacman("right", svalues.PacmanSpeed);
                             }
                             else if (direction == "right")
                             {
-                                pacman.Location = new Point(pacman.Location.X - svalues.PacmanSpeed, pacman.Location.Y); // move left
+                                MovePacman("left", svalues.PacmanSpeed);
                             }
                         }
                     }
