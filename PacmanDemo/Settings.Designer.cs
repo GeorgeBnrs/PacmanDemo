@@ -49,13 +49,21 @@
             this.PacmanSpeedLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.DirectionWrappingSwitch = new System.Windows.Forms.Button();
+            this.DirectionWrappingLabel = new System.Windows.Forms.Label();
+            this.DeadlyWallsLabel = new System.Windows.Forms.Label();
+            this.DeadlyWallsSwitch = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 481);
+            this.label1.Location = new System.Drawing.Point(14, 616);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 20);
             this.label1.TabIndex = 1;
@@ -64,7 +72,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(58, 595);
+            this.button1.Location = new System.Drawing.Point(114, 694);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 45);
             this.button1.TabIndex = 2;
@@ -76,7 +84,7 @@
             // 
             this.GamePanelSizeLabel.AutoSize = true;
             this.GamePanelSizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GamePanelSizeLabel.Location = new System.Drawing.Point(57, 508);
+            this.GamePanelSizeLabel.Location = new System.Drawing.Point(57, 643);
             this.GamePanelSizeLabel.Name = "GamePanelSizeLabel";
             this.GamePanelSizeLabel.Size = new System.Drawing.Size(20, 24);
             this.GamePanelSizeLabel.TabIndex = 4;
@@ -86,7 +94,7 @@
             // GamePanelSizePlus
             // 
             this.GamePanelSizePlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GamePanelSizePlus.Location = new System.Drawing.Point(83, 504);
+            this.GamePanelSizePlus.Location = new System.Drawing.Point(83, 639);
             this.GamePanelSizePlus.Name = "GamePanelSizePlus";
             this.GamePanelSizePlus.Size = new System.Drawing.Size(35, 35);
             this.GamePanelSizePlus.TabIndex = 5;
@@ -99,7 +107,7 @@
             // 
             this.GamePanelSizeMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GamePanelSizeMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.GamePanelSizeMinus.Location = new System.Drawing.Point(15, 504);
+            this.GamePanelSizeMinus.Location = new System.Drawing.Point(15, 639);
             this.GamePanelSizeMinus.Name = "GamePanelSizeMinus";
             this.GamePanelSizeMinus.Size = new System.Drawing.Size(35, 35);
             this.GamePanelSizeMinus.TabIndex = 6;
@@ -136,7 +144,7 @@
             // sep1
             // 
             this.sep1.AutoSize = true;
-            this.sep1.Location = new System.Drawing.Point(15, 456);
+            this.sep1.Location = new System.Drawing.Point(15, 591);
             this.sep1.Name = "sep1";
             this.sep1.Size = new System.Drawing.Size(214, 13);
             this.sep1.TabIndex = 9;
@@ -283,11 +291,101 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 336);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(214, 13);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "---------------------------------------------------------------------";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 367);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(144, 20);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Direction Wrapping";
+            // 
+            // DirectionWrappingSwitch
+            // 
+            this.DirectionWrappingSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DirectionWrappingSwitch.Location = new System.Drawing.Point(61, 399);
+            this.DirectionWrappingSwitch.Name = "DirectionWrappingSwitch";
+            this.DirectionWrappingSwitch.Size = new System.Drawing.Size(35, 35);
+            this.DirectionWrappingSwitch.TabIndex = 25;
+            this.DirectionWrappingSwitch.Text = "↔";
+            this.DirectionWrappingSwitch.UseVisualStyleBackColor = true;
+            this.DirectionWrappingSwitch.Click += new System.EventHandler(this.DirectionWrappingSwitch_Click);
+            // 
+            // DirectionWrappingLabel
+            // 
+            this.DirectionWrappingLabel.AutoSize = true;
+            this.DirectionWrappingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DirectionWrappingLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DirectionWrappingLabel.Location = new System.Drawing.Point(18, 406);
+            this.DirectionWrappingLabel.Name = "DirectionWrappingLabel";
+            this.DirectionWrappingLabel.Size = new System.Drawing.Size(32, 20);
+            this.DirectionWrappingLabel.TabIndex = 26;
+            this.DirectionWrappingLabel.Text = "ON";
+            // 
+            // DeadlyWallsLabel
+            // 
+            this.DeadlyWallsLabel.AutoSize = true;
+            this.DeadlyWallsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeadlyWallsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DeadlyWallsLabel.Location = new System.Drawing.Point(18, 523);
+            this.DeadlyWallsLabel.Name = "DeadlyWallsLabel";
+            this.DeadlyWallsLabel.Size = new System.Drawing.Size(41, 20);
+            this.DeadlyWallsLabel.TabIndex = 30;
+            this.DeadlyWallsLabel.Text = "OFF";
+            // 
+            // DeadlyWallsSwitch
+            // 
+            this.DeadlyWallsSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeadlyWallsSwitch.Location = new System.Drawing.Point(61, 516);
+            this.DeadlyWallsSwitch.Name = "DeadlyWallsSwitch";
+            this.DeadlyWallsSwitch.Size = new System.Drawing.Size(35, 35);
+            this.DeadlyWallsSwitch.TabIndex = 29;
+            this.DeadlyWallsSwitch.Text = "↔";
+            this.DeadlyWallsSwitch.UseVisualStyleBackColor = true;
+            this.DeadlyWallsSwitch.Click += new System.EventHandler(this.DeadlyWallsSwitch_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(18, 484);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 20);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Deadly Walls";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 453);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(214, 13);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "---------------------------------------------------------------------";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 652);
+            this.ClientSize = new System.Drawing.Size(378, 767);
+            this.Controls.Add(this.DeadlyWallsLabel);
+            this.Controls.Add(this.DeadlyWallsSwitch);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.DirectionWrappingLabel);
+            this.Controls.Add(this.DirectionWrappingSwitch);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.sep3);
             this.Controls.Add(this.PacmanSpeedMinus);
@@ -339,5 +437,13 @@
         private System.Windows.Forms.Label PacmanSpeedLabel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button DirectionWrappingSwitch;
+        private System.Windows.Forms.Label DirectionWrappingLabel;
+        private System.Windows.Forms.Label DeadlyWallsLabel;
+        private System.Windows.Forms.Button DeadlyWallsSwitch;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

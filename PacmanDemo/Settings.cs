@@ -36,14 +36,18 @@ namespace PacmanDemo
 
             if (svalues.Preset == "easy")
             {
+                Console.WriteLine("easyPicked");
+
                 EasyRadioButton.Checked = true;
             } 
             else if (svalues.Preset == "hard")
             {
+                Console.WriteLine("hardPicked");
                 HardRadioButton.Checked = true;
             }
             else if (svalues.Preset == "custom")
             {
+                Console.WriteLine("customPicked");
                 CustomRadioButton.Checked = true;
             }
         }
@@ -54,6 +58,29 @@ namespace PacmanDemo
             GamePanelSizeLabel.Text = svalues.GamePanelSize.ToString();
             CherryRespawnRateLabel.Text = svalues.CherryRespawnTime.ToString();
             PacmanSpeedLabel.Text = svalues.PacmanSpeed.ToString();
+
+            if (svalues.DeadlyWalls)
+            {
+                DeadlyWallsLabel.Text = "ON";
+                DeadlyWallsLabel.ForeColor = Color.Green;
+            }
+            else
+            {
+                DeadlyWallsLabel.Text = "OFF";
+                DeadlyWallsLabel.ForeColor = Color.Red;
+            }
+
+            if (svalues.DirectionWrapping)
+            {
+                DirectionWrappingLabel.Text = "ON";
+                DirectionWrappingLabel.ForeColor = Color.Green;
+            } 
+            else
+            {
+                DirectionWrappingLabel.Text = "OFF";
+                DirectionWrappingLabel.ForeColor = Color.Red;
+            }
+
 
             // Disable the correct buttons
             if (svalues.GamePanelSize == 1)
@@ -185,22 +212,29 @@ namespace PacmanDemo
         {
             if (EasyRadioButton.Checked)
             {
+                Console.WriteLine("easy");
                 svalues.Preset = "easy";
                 svalues.GamePanelSize = 1;
                 svalues.CherryRespawnTime = 8;
                 svalues.PacmanSpeed = 3;
+                svalues.DeadlyWalls = false;
+                svalues.DirectionWrapping = true;
                 updateAll();
             }
             else if (HardRadioButton.Checked)
             {
+                Console.WriteLine("hard");
                 svalues.Preset = "hard";
                 svalues.GamePanelSize = 3;
                 svalues.CherryRespawnTime = 4;
                 svalues.PacmanSpeed = 2;
+                svalues.DeadlyWalls = true;
+                svalues.DirectionWrapping = false;
                 updateAll();
             } 
             else if (CustomRadioButton.Checked)
             {
+                Console.WriteLine("custom");
                 svalues.Preset = "custom";
                 updateAll();
             }
@@ -211,6 +245,38 @@ namespace PacmanDemo
             File.WriteAllText("settings.json", JsonConvert.SerializeObject(svalues));
             this.Dispose();
         }
+
+        private void DirectionWrappingSwitch_Click(object sender, EventArgs e)
+        {
+            CustomRadioButton.Checked = true;
+            svalues.DirectionWrapping = !svalues.DirectionWrapping;
+            if (svalues.DirectionWrapping)
+            {
+                DirectionWrappingLabel.Text = "ON";
+                DirectionWrappingLabel.ForeColor = Color.Green;
+            }
+            else
+            {
+                DirectionWrappingLabel.Text = "OFF";
+                DirectionWrappingLabel.ForeColor = Color.Red;
+            }
+        }
+
+        private void DeadlyWallsSwitch_Click(object sender, EventArgs e)
+        {
+            CustomRadioButton.Checked = true;
+            svalues.DeadlyWalls = !svalues.DeadlyWalls;
+            if (svalues.DeadlyWalls)
+            {
+                DeadlyWallsLabel.Text = "ON";
+                DeadlyWallsLabel.ForeColor = Color.Green;
+            }
+            else
+            {
+                DeadlyWallsLabel.Text = "OFF";
+                DeadlyWallsLabel.ForeColor = Color.Red;
+            }
+        }
     }
 
     [Serializable]
@@ -220,12 +286,17 @@ namespace PacmanDemo
         public int GamePanelSize {  get; set; }
         public int CherryRespawnTime { get; set; }
         public int PacmanSpeed { get; set; }
+        public bool DirectionWrapping { get; set; }
+        public bool DeadlyWalls { get; set; }
         public SettingsValues() 
         {
             Preset = "easy";
             GamePanelSize = 1;
             CherryRespawnTime = 8;
             PacmanSpeed = 3;
+            DeadlyWalls = false;
+            DirectionWrapping = true;
+
         }
     }
 
