@@ -61,6 +61,10 @@
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.CherryTimer = new System.Windows.Forms.Timer(this.components);
             this.PacmanTimer = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.GamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
@@ -86,11 +90,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pacman)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cherry)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             this.SuspendLayout();
             // 
             // GamePanel
             // 
             this.GamePanel.BackColor = System.Drawing.Color.Black;
+            this.GamePanel.Controls.Add(this.pictureBox25);
+            this.GamePanel.Controls.Add(this.pictureBox24);
+            this.GamePanel.Controls.Add(this.pictureBox23);
+            this.GamePanel.Controls.Add(this.pictureBox22);
             this.GamePanel.Controls.Add(this.pictureBox16);
             this.GamePanel.Controls.Add(this.pictureBox17);
             this.GamePanel.Controls.Add(this.pictureBox18);
@@ -116,7 +128,7 @@
             this.GamePanel.Controls.Add(this.cherry);
             this.GamePanel.Location = new System.Drawing.Point(2, 57);
             this.GamePanel.Name = "GamePanel";
-            this.GamePanel.Size = new System.Drawing.Size(996, 659);
+            this.GamePanel.Size = new System.Drawing.Size(1000, 650);
             this.GamePanel.TabIndex = 0;
             // 
             // pictureBox16
@@ -192,7 +204,7 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = global::PacmanDemo.Properties.Resources.brick_02;
-            this.pictureBox12.Location = new System.Drawing.Point(252, 361);
+            this.pictureBox12.Location = new System.Drawing.Point(250, 361);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(50, 50);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -202,7 +214,7 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = global::PacmanDemo.Properties.Resources.brick_02;
-            this.pictureBox13.Location = new System.Drawing.Point(252, 311);
+            this.pictureBox13.Location = new System.Drawing.Point(250, 311);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(50, 50);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -212,7 +224,7 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = global::PacmanDemo.Properties.Resources.brick_02;
-            this.pictureBox14.Location = new System.Drawing.Point(252, 411);
+            this.pictureBox14.Location = new System.Drawing.Point(250, 411);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(50, 50);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -232,7 +244,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::PacmanDemo.Properties.Resources.brick_02;
-            this.pictureBox10.Location = new System.Drawing.Point(252, 211);
+            this.pictureBox10.Location = new System.Drawing.Point(250, 211);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(50, 50);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -242,7 +254,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::PacmanDemo.Properties.Resources.brick_02;
-            this.pictureBox9.Location = new System.Drawing.Point(252, 161);
+            this.pictureBox9.Location = new System.Drawing.Point(250, 161);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(50, 50);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -252,7 +264,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::PacmanDemo.Properties.Resources.brick_02;
-            this.pictureBox8.Location = new System.Drawing.Point(252, 261);
+            this.pictureBox8.Location = new System.Drawing.Point(250, 261);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(50, 50);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -282,7 +294,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::PacmanDemo.Properties.Resources.brick_02;
-            this.pictureBox4.Location = new System.Drawing.Point(73, 56);
+            this.pictureBox4.Location = new System.Drawing.Point(52, 52);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(50, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -292,7 +304,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::PacmanDemo.Properties.Resources.brick_02;
-            this.pictureBox3.Location = new System.Drawing.Point(73, 540);
+            this.pictureBox3.Location = new System.Drawing.Point(52, 548);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -302,7 +314,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PacmanDemo.Properties.Resources.brick_02;
-            this.pictureBox2.Location = new System.Drawing.Point(872, 56);
+            this.pictureBox2.Location = new System.Drawing.Point(894, 52);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -312,7 +324,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PacmanDemo.Properties.Resources.brick_02;
-            this.pictureBox1.Location = new System.Drawing.Point(872, 540);
+            this.pictureBox1.Location = new System.Drawing.Point(894, 548);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -332,7 +344,7 @@
             // pacman
             // 
             this.pacman.Image = global::PacmanDemo.Properties.Resources.pacman_open_border_new;
-            this.pacman.Location = new System.Drawing.Point(149, 56);
+            this.pacman.Location = new System.Drawing.Point(128, 52);
             this.pacman.Name = "pacman";
             this.pacman.Size = new System.Drawing.Size(50, 50);
             this.pacman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -342,7 +354,7 @@
             // cherry
             // 
             this.cherry.Image = global::PacmanDemo.Properties.Resources.cherry1;
-            this.cherry.Location = new System.Drawing.Point(774, 558);
+            this.cherry.Location = new System.Drawing.Point(810, 548);
             this.cherry.Name = "cherry";
             this.cherry.Size = new System.Drawing.Size(32, 32);
             this.cherry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -358,7 +370,7 @@
             this.panel2.Controls.Add(this.GameTimerLabel);
             this.panel2.Location = new System.Drawing.Point(2, -1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1959, 57);
+            this.panel2.Size = new System.Drawing.Size(1000, 57);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -416,11 +428,51 @@
             this.PacmanTimer.Interval = 10;
             this.PacmanTimer.Tick += new System.EventHandler(this.PacmanTimer_Tick);
             // 
+            // pictureBox22
+            // 
+            this.pictureBox22.Image = global::PacmanDemo.Properties.Resources.brick_02;
+            this.pictureBox22.Location = new System.Drawing.Point(300, 161);
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox22.TabIndex = 31;
+            this.pictureBox22.TabStop = false;
+            // 
+            // pictureBox23
+            // 
+            this.pictureBox23.Image = global::PacmanDemo.Properties.Resources.brick_02;
+            this.pictureBox23.Location = new System.Drawing.Point(300, 411);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox23.TabIndex = 32;
+            this.pictureBox23.TabStop = false;
+            // 
+            // pictureBox24
+            // 
+            this.pictureBox24.Image = global::PacmanDemo.Properties.Resources.brick_02;
+            this.pictureBox24.Location = new System.Drawing.Point(637, 161);
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox24.TabIndex = 33;
+            this.pictureBox24.TabStop = false;
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.Image = global::PacmanDemo.Properties.Resources.brick_02;
+            this.pictureBox25.Location = new System.Drawing.Point(637, 411);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox25.TabIndex = 34;
+            this.pictureBox25.TabStop = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 715);
+            this.ClientSize = new System.Drawing.Size(1006, 710);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.GamePanel);
             this.Name = "Game";
@@ -452,6 +504,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.cherry)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,6 +545,10 @@
         internal System.Windows.Forms.PictureBox pictureBox10;
         internal System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.PictureBox pictureBox25;
+        internal System.Windows.Forms.PictureBox pictureBox24;
+        internal System.Windows.Forms.PictureBox pictureBox23;
+        internal System.Windows.Forms.PictureBox pictureBox22;
     }
 }
 

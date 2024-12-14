@@ -227,7 +227,7 @@ namespace PacmanDemo
                 svalues.Preset = "hard";
                 //svalues.GamePanelSize = 3;
                 svalues.CherryRespawnTime = 4;
-                svalues.PacmanSpeed = 2;
+                svalues.PacmanSpeed = 3;
                 svalues.DeadlyWalls = true;
                 svalues.DirectionWrapping = false;
                 updateAll();

@@ -34,7 +34,7 @@ namespace PacmanDemo
 
         private void Game_Load(object sender, EventArgs e)
         {
-            // rename all walls to "wall", since this isnt supported by the designer
+            // rename all walls to "wall", since this isn't supported by the designer
             foreach (PictureBox wall in GamePanel.Controls.OfType<PictureBox>())
             {
                 if ((wall.Name != "cherry") && (wall.Name != "pacman"))
@@ -67,7 +67,7 @@ namespace PacmanDemo
             //
             // TODO: VARIABLE TIME
             //
-            if (msec >= 101)
+            if (msec >= 1201)
             {
                 EndGame();
             }
@@ -80,14 +80,14 @@ namespace PacmanDemo
             GameTimer.Stop();
             CherryTimer.Stop();
             PacmanTimer.Stop();
-            MessageBox.Show("Game ended, you gathered " + score.ToString() + " cherrys!");
+            MessageBox.Show("Game ended, you gathered " + score.ToString() + " cherries!");
             Dispose();
         }
 
         private void ResetCherry()
         {
             Random rnd = new Random();
-            int cherryX = rnd.Next(GamePanel.Width - 32); // - 32 so it doesnt appear outside the panel sometimes, since the location is of the top left corner 
+            int cherryX = rnd.Next(GamePanel.Width - 32); // - 32 so it doesn't appear outside the panel sometimes, since the location is of the top left corner 
             int cherryY = rnd.Next(GamePanel.Height - 32);
             cherry.Visible = false;
             cherry.Location = new Point(cherryX, cherryY);
@@ -277,8 +277,6 @@ namespace PacmanDemo
                 }
             }
         }
-
-
     }
 }
 
