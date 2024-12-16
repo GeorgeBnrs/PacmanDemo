@@ -479,7 +479,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.GamePanel);
             this.Name = "Game";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Game_Load);
             this.GamePanel.ResumeLayout(false);
