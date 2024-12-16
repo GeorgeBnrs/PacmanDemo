@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.GamePanel = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ScoreLabel = new System.Windows.Forms.Label();
+            this.DirectionLabel = new System.Windows.Forms.Label();
+            this.GameTimerLabel = new System.Windows.Forms.Label();
+            this.GameTimer = new System.Windows.Forms.Timer(this.components);
+            this.CherryTimer = new System.Windows.Forms.Timer(this.components);
+            this.PacmanTimer = new System.Windows.Forms.Timer(this.components);
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
@@ -57,15 +65,8 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pacman = new System.Windows.Forms.PictureBox();
             this.cherry = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ScoreLabel = new System.Windows.Forms.Label();
-            this.DirectionLabel = new System.Windows.Forms.Label();
-            this.GameTimerLabel = new System.Windows.Forms.Label();
-            this.GameTimer = new System.Windows.Forms.Timer(this.components);
-            this.CherryTimer = new System.Windows.Forms.Timer(this.components);
-            this.PacmanTimer = new System.Windows.Forms.Timer(this.components);
             this.GamePanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
@@ -93,7 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacman)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cherry)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // GamePanel
@@ -130,6 +130,75 @@
             this.GamePanel.Name = "GamePanel";
             this.GamePanel.Size = new System.Drawing.Size(1000, 650);
             this.GamePanel.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.ScoreLabel);
+            this.panel2.Controls.Add(this.DirectionLabel);
+            this.panel2.Controls.Add(this.GameTimerLabel);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1000, 57);
+            this.panel2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(773, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Deadly Walls";
+            this.label1.Visible = false;
+            // 
+            // ScoreLabel
+            // 
+            this.ScoreLabel.AutoSize = true;
+            this.ScoreLabel.Location = new System.Drawing.Point(146, 23);
+            this.ScoreLabel.Name = "ScoreLabel";
+            this.ScoreLabel.Size = new System.Drawing.Size(47, 13);
+            this.ScoreLabel.TabIndex = 2;
+            this.ScoreLabel.Text = "Score: 0";
+            // 
+            // DirectionLabel
+            // 
+            this.DirectionLabel.AutoSize = true;
+            this.DirectionLabel.Location = new System.Drawing.Point(929, 25);
+            this.DirectionLabel.Name = "DirectionLabel";
+            this.DirectionLabel.Size = new System.Drawing.Size(47, 13);
+            this.DirectionLabel.TabIndex = 1;
+            this.DirectionLabel.Text = "direction";
+            this.DirectionLabel.Visible = false;
+            // 
+            // GameTimerLabel
+            // 
+            this.GameTimerLabel.AutoSize = true;
+            this.GameTimerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameTimerLabel.ForeColor = System.Drawing.Color.Green;
+            this.GameTimerLabel.Location = new System.Drawing.Point(462, 16);
+            this.GameTimerLabel.Name = "GameTimerLabel";
+            this.GameTimerLabel.Size = new System.Drawing.Size(64, 25);
+            this.GameTimerLabel.TabIndex = 0;
+            this.GameTimerLabel.Text = "timer";
+            // 
+            // GameTimer
+            // 
+            this.GameTimer.Enabled = true;
+            this.GameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
+            // 
+            // CherryTimer
+            // 
+            this.CherryTimer.Enabled = true;
+            this.CherryTimer.Interval = 6000;
+            this.CherryTimer.Tick += new System.EventHandler(this.CherryTimer_Tick);
+            // 
+            // PacmanTimer
+            // 
+            this.PacmanTimer.Enabled = true;
+            this.PacmanTimer.Interval = 10;
+            this.PacmanTimer.Tick += new System.EventHandler(this.PacmanTimer_Tick);
             // 
             // pictureBox25
             // 
@@ -401,73 +470,6 @@
             this.cherry.TabIndex = 0;
             this.cherry.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.ScoreLabel);
-            this.panel2.Controls.Add(this.DirectionLabel);
-            this.panel2.Controls.Add(this.GameTimerLabel);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 57);
-            this.panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(549, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Deadly Walls";
-            this.label1.Visible = false;
-            // 
-            // ScoreLabel
-            // 
-            this.ScoreLabel.AutoSize = true;
-            this.ScoreLabel.Location = new System.Drawing.Point(146, 23);
-            this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(47, 13);
-            this.ScoreLabel.TabIndex = 2;
-            this.ScoreLabel.Text = "Score: 0";
-            // 
-            // DirectionLabel
-            // 
-            this.DirectionLabel.AutoSize = true;
-            this.DirectionLabel.Location = new System.Drawing.Point(76, 23);
-            this.DirectionLabel.Name = "DirectionLabel";
-            this.DirectionLabel.Size = new System.Drawing.Size(47, 13);
-            this.DirectionLabel.TabIndex = 1;
-            this.DirectionLabel.Text = "direction";
-            this.DirectionLabel.Visible = false;
-            // 
-            // GameTimerLabel
-            // 
-            this.GameTimerLabel.AutoSize = true;
-            this.GameTimerLabel.Location = new System.Drawing.Point(23, 23);
-            this.GameTimerLabel.Name = "GameTimerLabel";
-            this.GameTimerLabel.Size = new System.Drawing.Size(29, 13);
-            this.GameTimerLabel.TabIndex = 0;
-            this.GameTimerLabel.Text = "timer";
-            // 
-            // GameTimer
-            // 
-            this.GameTimer.Enabled = true;
-            this.GameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
-            // 
-            // CherryTimer
-            // 
-            this.CherryTimer.Enabled = true;
-            this.CherryTimer.Interval = 6000;
-            this.CherryTimer.Tick += new System.EventHandler(this.CherryTimer_Tick);
-            // 
-            // PacmanTimer
-            // 
-            this.PacmanTimer.Enabled = true;
-            this.PacmanTimer.Interval = 10;
-            this.PacmanTimer.Tick += new System.EventHandler(this.PacmanTimer_Tick);
-            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,9 +479,12 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.GamePanel);
             this.Name = "Game";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Game_Load);
             this.GamePanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
@@ -507,8 +512,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacman)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cherry)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

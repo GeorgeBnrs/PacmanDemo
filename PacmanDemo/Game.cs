@@ -72,10 +72,17 @@ namespace PacmanDemo
             //
             // TODO: VARIABLE TIME
             //
-            if (msec >= 101)
+            if (msec == svalues.GameTime * 10 + 1)
             {
                 spGameEnded.Play();
                 EndGame();
+            } 
+            if (msec == svalues.GameTime * 10 / 2) 
+            {
+                GameTimerLabel.ForeColor = Color.Yellow;
+            } if (msec == (svalues.GameTime - 10)*10 )
+            {
+                GameTimerLabel.ForeColor= Color.DarkRed;
             }
             UpdateTimer(msec);
             UpdateImage();

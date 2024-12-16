@@ -57,6 +57,7 @@ namespace PacmanDemo
             // Label values
             CherryRespawnRateLabel.Text = svalues.CherryRespawnTime.ToString();
             PacmanSpeedLabel.Text = svalues.PacmanSpeed.ToString();
+            GameTimeLabel.Text = svalues.GameTime.ToString();
 
             if (svalues.DeadlyWalls)
             {
@@ -108,6 +109,22 @@ namespace PacmanDemo
             {
                 PacmanSpeedPlus.Enabled = true;
                 PacmanSpeedMinus.Enabled = true;
+            }
+
+            if (svalues.GameTime == 30)
+            {
+                GameTimePlus.Enabled = true;
+                GameTimeMinus.Enabled = false;
+            }
+            else if (svalues.GameTime == 120)
+            {
+                GameTimePlus.Enabled = false;
+                GameTimeMinus.Enabled = true;
+            }
+            else
+            {
+                GameTimePlus.Enabled = true;
+                GameTimeMinus.Enabled = true;
             }
         }
 
@@ -171,6 +188,36 @@ namespace PacmanDemo
             }
         }
 
+        private void GameTimeMinus_Click(object sender, EventArgs e)
+        {
+            CustomRadioButton.Checked = true;
+            if (svalues.GameTime > 30)
+            {
+                GameTimePlus.Enabled = true;
+                svalues.GameTime /= 2;
+                GameTimeLabel.Text = svalues.GameTime.ToString();
+                if (svalues.GameTime == 30)
+                {
+                    GameTimeMinus.Enabled = false;
+                }
+            }
+        }
+
+        private void GameTimePlus_Click(object sender, EventArgs e)
+        {
+            CustomRadioButton.Checked = true;
+            if (svalues.GameTime < 120)
+            {
+                GameTimeMinus.Enabled = true;
+                svalues.GameTime *= 2;
+                GameTimeLabel.Text = svalues.GameTime.ToString();
+                if (svalues.GameTime == 120)
+                {
+                    GameTimePlus.Enabled = false;
+                }
+            }
+        }
+
         private void CheckedChange(object sender, EventArgs e)
         {
             if (EasyRadioButton.Checked)
@@ -179,6 +226,7 @@ namespace PacmanDemo
                 svalues.Preset = "easy";
                 svalues.CherryRespawnTime = 8;
                 svalues.PacmanSpeed = 3;
+                svalues.GameTime = 60;
                 svalues.DeadlyWalls = false;
                 svalues.DirectionWrapping = true;
                 UpdateAll();
@@ -189,6 +237,7 @@ namespace PacmanDemo
                 svalues.Preset = "hard";
                 svalues.CherryRespawnTime = 4;
                 svalues.PacmanSpeed = 3;
+                svalues.GameTime = 60;
                 svalues.DeadlyWalls = true;
                 svalues.DirectionWrapping = false;
                 UpdateAll();
@@ -238,6 +287,8 @@ namespace PacmanDemo
                 DeadlyWallsLabel.ForeColor = Color.Red;
             }
         }
+
+
     }
 
     [Serializable]
@@ -249,6 +300,7 @@ namespace PacmanDemo
         public int PacmanSpeed { get; set; }
         public bool DirectionWrapping { get; set; }
         public bool DeadlyWalls { get; set; }
+        public int GameTime { get; set; }
         public SettingsValues() 
         {
             Preset = "easy";
@@ -256,7 +308,7 @@ namespace PacmanDemo
             PacmanSpeed = 3;
             DeadlyWalls = false;
             DirectionWrapping = true;
-
+            GameTime = 60;
         }
     }
 
