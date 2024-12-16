@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
@@ -77,10 +78,13 @@ namespace PacmanDemo
 
         private void EndGame()
         {
+            PacmanTimer.Stop();
             GameTimer.Stop();
             CherryTimer.Stop();
-            PacmanTimer.Stop();
-            MessageBox.Show("Game ended, you gathered " + score.ToString() + " cherries!");
+            
+            string cherryString = "cherries!";
+            if (score == 1) { cherryString = "cherry!"; }
+            MessageBox.Show("Game ended, you gathered " + score.ToString() + " " + cherryString);
             Dispose();
         }
 
@@ -240,41 +244,46 @@ namespace PacmanDemo
 
             foreach (PictureBox pbox in GamePanel.Controls.OfType<PictureBox>())
             {
-                if (pacman.Bounds.IntersectsWith(pbox.Bounds))
-                {
-                    if (pbox.Name == "cherry") // capture cherry 
+                if (!this.IsDisposed) {
+                    if (pacman.Bounds.IntersectsWith(pbox.Bounds))
                     {
-                        score++;
-                        ScoreLabel.Text = "Score: " +score.ToString();
-                        ResetCherry();
-                    }
-                    else if (pbox.Name == "wall") // 
-                    {
-                        if (svalues.DeadlyWalls)
+                        if (pbox.Name == "cherry") // capture cherry 
                         {
-                            EndGame();
+                            score++;
+                            SystemSounds.Exclamation.Play();
+                            ScoreLabel.Text = "Score: " + score.ToString();
+                            ResetCherry();
                         }
-                        else // "Stop" pacman when hitting a wall
+                        else if (pbox.Name == "wall") // 
                         {
-                            if (direction == "up")
+                            if (svalues.DeadlyWalls)
                             {
-                                MovePacman("down", svalues.PacmanSpeed);
+                                Console.WriteLine("Ended");
+                                EndGame();
                             }
-                            else if (direction == "down")
+                            else // "Stop" pacman when hitting a wall
                             {
-                                MovePacman("up", svalues.PacmanSpeed);
-                            }
-                            else if (direction == "left")
-                            {
-                                MovePacman("right", svalues.PacmanSpeed);
-                            }
-                            else if (direction == "right")
-                            {
-                                MovePacman("left", svalues.PacmanSpeed);
+                                if (direction == "up")
+                                {
+                                    MovePacman("down", svalues.PacmanSpeed);
+                                }
+                                else if (direction == "down")
+                                {
+                                    MovePacman("up", svalues.PacmanSpeed);
+                                }
+                                else if (direction == "left")
+                                {
+                                    MovePacman("right", svalues.PacmanSpeed);
+                                }
+                                else if (direction == "right")
+                                {
+                                    MovePacman("left", svalues.PacmanSpeed);
+                                }
                             }
                         }
                     }
                 }
+                
             }
         }
     }
