@@ -250,7 +250,6 @@ namespace PacmanDemo
                         if (pbox.Name == "cherry") // capture cherry 
                         {
                             score++;
-                            SystemSounds.Exclamation.Play();
                             ScoreLabel.Text = "Score: " + score.ToString();
                             ResetCherry();
                         }
