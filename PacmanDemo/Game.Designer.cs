@@ -126,7 +126,7 @@
             this.GamePanel.Controls.Add(this.pictureBox6);
             this.GamePanel.Controls.Add(this.pacman);
             this.GamePanel.Controls.Add(this.cherry);
-            this.GamePanel.Location = new System.Drawing.Point(2, 57);
+            this.GamePanel.Location = new System.Drawing.Point(0, 57);
             this.GamePanel.Name = "GamePanel";
             this.GamePanel.Size = new System.Drawing.Size(1000, 650);
             this.GamePanel.TabIndex = 0;
@@ -408,7 +408,7 @@
             this.panel2.Controls.Add(this.ScoreLabel);
             this.panel2.Controls.Add(this.DirectionLabel);
             this.panel2.Controls.Add(this.GameTimerLabel);
-            this.panel2.Location = new System.Drawing.Point(2, -1);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 57);
             this.panel2.TabIndex = 1;
@@ -472,7 +472,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1000, 709);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.GamePanel);

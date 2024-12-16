@@ -23,6 +23,10 @@ namespace PacmanDemo
         string direction = "right";
         bool open = true;
         SettingsValues svalues;
+        SoundPlayer spDing = new SoundPlayer(Resources.ding);
+        SoundPlayer spGameOver = new SoundPlayer(Resources.gameover);
+        SoundPlayer spGameEnded = new SoundPlayer(Resources.gameended);
+
 
         public Game()
         {
@@ -68,8 +72,9 @@ namespace PacmanDemo
             //
             // TODO: VARIABLE TIME
             //
-            if (msec >= 1201)
+            if (msec >= 101)
             {
+                spGameEnded.Play();
                 EndGame();
             }
             UpdateTimer(msec);
@@ -81,7 +86,6 @@ namespace PacmanDemo
             PacmanTimer.Stop();
             GameTimer.Stop();
             CherryTimer.Stop();
-            
             string cherryString = "cherries!";
             if (score == 1) { cherryString = "cherry!"; }
             MessageBox.Show("Game ended, you gathered " + score.ToString() + " " + cherryString);
@@ -199,20 +203,20 @@ namespace PacmanDemo
             // direction wrapping
             if (svalues.DirectionWrapping)
             {
-                // Move to the opposite side
+                // Move to the opposite side, offset is 50 so pacman never leaves the bounds of the GamePanel
                 if (pacman.Location.X < 0) // left side
                 {
-                    pacman.Location = new Point(GamePanel.Width, pacman.Location.Y);
+                    pacman.Location = new Point(GamePanel.Width - 50, pacman.Location.Y);
                 }
-                else if (pacman.Location.X > GamePanel.Width) // right side
+                else if (pacman.Location.X + 50 > GamePanel.Width) // right side
                 {
                     pacman.Location = new Point(0, pacman.Location.Y);
                 }
                 else if (pacman.Location.Y < 0) // top side
                 {
-                    pacman.Location = new Point(pacman.Location.X, GamePanel.Height);
+                    pacman.Location = new Point(pacman.Location.X, GamePanel.Height -50);
                 }
-                else if (pacman.Location.Y > GamePanel.Height) // bottom side
+                else if (pacman.Location.Y  + 50 > GamePanel.Height) // bottom side
                 {
                     pacman.Location = new Point(pacman.Location.X, 0);
                 }
@@ -250,6 +254,7 @@ namespace PacmanDemo
                         if (pbox.Name == "cherry") // capture cherry 
                         {
                             score++;
+                            spDing.Play();
                             ScoreLabel.Text = "Score: " + score.ToString();
                             ResetCherry();
                         }
@@ -258,6 +263,8 @@ namespace PacmanDemo
                             if (svalues.DeadlyWalls)
                             {
                                 Console.WriteLine("Ended");
+                                spGameOver.Play();
+
                                 EndGame();
                             }
                             else // "Stop" pacman when hitting a wall
