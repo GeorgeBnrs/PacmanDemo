@@ -23,7 +23,7 @@ namespace PacmanDemo
         string direction = "right";
         bool open = true;
         SettingsValues svalues;
-        SoundPlayer spDing = new SoundPlayer(Resources.ding);
+        SoundPlayer spEat = new SoundPlayer(Resources.eat);
         SoundPlayer spGameOver = new SoundPlayer(Resources.gameover);
         SoundPlayer spGameEnded = new SoundPlayer(Resources.gameended);
 
@@ -35,6 +35,7 @@ namespace PacmanDemo
             FormClosing += Game_Closing;
             KeyPreview = true;
             KeyDown += Form1_KeyDown;
+            
         }
 
         private void Game_Load(object sender, EventArgs e)
@@ -258,7 +259,7 @@ namespace PacmanDemo
                         if (pbox.Name == "cherry") // capture cherry 
                         {
                             score++;
-                            spDing.Play();
+                            spEat.Play();
                             ScoreLabel.Text = "Score: " + score.ToString();
                             ResetCherry();
                         }

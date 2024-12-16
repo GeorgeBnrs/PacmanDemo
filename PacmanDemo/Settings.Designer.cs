@@ -61,6 +61,7 @@
             // 
             // button1
             // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(94, 692);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 45);
@@ -129,6 +130,7 @@
             // CherryRespawnRateMinus
             // 
             this.CherryRespawnRateMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CherryRespawnRateMinus.ForeColor = System.Drawing.Color.Black;
             this.CherryRespawnRateMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CherryRespawnRateMinus.Location = new System.Drawing.Point(12, 182);
             this.CherryRespawnRateMinus.Name = "CherryRespawnRateMinus";
@@ -141,6 +143,7 @@
             // CherryRespawnRatePlus
             // 
             this.CherryRespawnRatePlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CherryRespawnRatePlus.ForeColor = System.Drawing.Color.Black;
             this.CherryRespawnRatePlus.Location = new System.Drawing.Point(80, 182);
             this.CherryRespawnRatePlus.Name = "CherryRespawnRatePlus";
             this.CherryRespawnRatePlus.Size = new System.Drawing.Size(35, 35);
@@ -181,6 +184,7 @@
             // PacmanSpeedMinus
             // 
             this.PacmanSpeedMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PacmanSpeedMinus.ForeColor = System.Drawing.Color.Black;
             this.PacmanSpeedMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.PacmanSpeedMinus.Location = new System.Drawing.Point(12, 282);
             this.PacmanSpeedMinus.Name = "PacmanSpeedMinus";
@@ -193,6 +197,7 @@
             // PacmanSpeedPlus
             // 
             this.PacmanSpeedPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PacmanSpeedPlus.ForeColor = System.Drawing.Color.Black;
             this.PacmanSpeedPlus.Location = new System.Drawing.Point(80, 284);
             this.PacmanSpeedPlus.Name = "PacmanSpeedPlus";
             this.PacmanSpeedPlus.Size = new System.Drawing.Size(35, 35);
@@ -225,7 +230,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(296, 52);
+            this.radioButton1.Location = new System.Drawing.Point(295, 55);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(365, 17);
             this.radioButton1.TabIndex = 22;
@@ -256,6 +261,7 @@
             // DirectionWrappingSwitch
             // 
             this.DirectionWrappingSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DirectionWrappingSwitch.ForeColor = System.Drawing.Color.Black;
             this.DirectionWrappingSwitch.Location = new System.Drawing.Point(61, 499);
             this.DirectionWrappingSwitch.Name = "DirectionWrappingSwitch";
             this.DirectionWrappingSwitch.Size = new System.Drawing.Size(35, 35);
@@ -289,6 +295,7 @@
             // DeadlyWallsSwitch
             // 
             this.DeadlyWallsSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeadlyWallsSwitch.ForeColor = System.Drawing.Color.Black;
             this.DeadlyWallsSwitch.Location = new System.Drawing.Point(61, 616);
             this.DeadlyWallsSwitch.Name = "DeadlyWallsSwitch";
             this.DeadlyWallsSwitch.Size = new System.Drawing.Size(35, 35);
@@ -328,6 +335,7 @@
             // GameTimeMinus
             // 
             this.GameTimeMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameTimeMinus.ForeColor = System.Drawing.Color.Black;
             this.GameTimeMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GameTimeMinus.Location = new System.Drawing.Point(12, 383);
             this.GameTimeMinus.Name = "GameTimeMinus";
@@ -340,6 +348,7 @@
             // GameTimePlus
             // 
             this.GameTimePlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameTimePlus.ForeColor = System.Drawing.Color.Black;
             this.GameTimePlus.Location = new System.Drawing.Point(94, 385);
             this.GameTimePlus.Name = "GameTimePlus";
             this.GameTimePlus.Size = new System.Drawing.Size(35, 35);
@@ -372,6 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(332, 767);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GameTimeMinus);
@@ -402,6 +412,7 @@
             this.Controls.Add(this.HardRadioButton);
             this.Controls.Add(this.EasyRadioButton);
             this.Controls.Add(this.button1);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "Settings";
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
