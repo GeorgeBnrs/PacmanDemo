@@ -193,5 +193,8 @@
   <ItemGroup>
     <None Include="Resources\Config-Pressed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TopPanelBlurred.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

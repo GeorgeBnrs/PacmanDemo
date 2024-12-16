@@ -39,15 +39,6 @@ namespace PacmanDemo
 
         private void Game_Load(object sender, EventArgs e)
         {
-            // rename all walls to "wall", since this isn't supported by the designer
-            foreach (PictureBox wall in GamePanel.Controls.OfType<PictureBox>())
-            {
-                if ((wall.Name != "cherry") && (wall.Name != "pacman"))
-                {
-                    wall.Name = "wall";
-                }
-            }
-            
             // load settings
             try
             {
@@ -57,8 +48,18 @@ namespace PacmanDemo
             {
                 svalues = new SettingsValues();
             }
-            if (svalues.DeadlyWalls) { label1.Visible = true; }
             CherryTimer.Interval = svalues.CherryRespawnTime * 1000;
+
+            // rename all walls to "wall", since this isn't supported by the designer
+            foreach (PictureBox wall in GamePanel.Controls.OfType<PictureBox>())
+            {
+                if ((wall.Name != "cherry") && (wall.Name != "pacman"))
+                {
+                    wall.Name = "wall";
+                    if (svalues.DeadlyWalls) { wall.Image = Resources.brick_01; }
+
+                }
+            }
         }
 
         private void Game_Closing(object sender, EventArgs e)
@@ -125,7 +126,7 @@ namespace PacmanDemo
             int mins = msec / 600;
             int secs = msec / 10 - (mins * 60);
             int msecs = msec - (mins * 600) - (secs * 10);
-            GameTimerLabel.Text = mins.ToString() + " : " + secs.ToString() + " : " + msecs.ToString();
+            GameTimerLabel.Text = mins.ToString() + ":" + secs.ToString() + ":" + msecs.ToString();
         }
 
         private void UpdateImage()
@@ -153,22 +154,18 @@ namespace PacmanDemo
             switch (e.KeyCode)
             {
                 case Keys.Up:
-                    DirectionLabel.Text = "Up";
                     direction = "up";
                     PacmanTimer.Enabled = true;
                     break;
                 case Keys.Down:
-                    DirectionLabel.Text = "Down";
                     direction = "down";
                     PacmanTimer.Enabled = true;
                     break;
                 case Keys.Left:
-                    DirectionLabel.Text = "Left";
                     direction = "left";
                     PacmanTimer.Enabled = true;
                     break;
                 case Keys.Right:
-                    DirectionLabel.Text = "Right";
                     direction = "right";
                     PacmanTimer.Enabled = true;
                     break;

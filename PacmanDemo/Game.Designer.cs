@@ -30,14 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.GamePanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ScoreLabel = new System.Windows.Forms.Label();
-            this.DirectionLabel = new System.Windows.Forms.Label();
-            this.GameTimerLabel = new System.Windows.Forms.Label();
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.CherryTimer = new System.Windows.Forms.Timer(this.components);
             this.PacmanTimer = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ScoreLabel = new System.Windows.Forms.Label();
+            this.GameTimerLabel = new System.Windows.Forms.Label();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
@@ -131,58 +130,6 @@
             this.GamePanel.Size = new System.Drawing.Size(1000, 650);
             this.GamePanel.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.ScoreLabel);
-            this.panel2.Controls.Add(this.DirectionLabel);
-            this.panel2.Controls.Add(this.GameTimerLabel);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 57);
-            this.panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(773, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Deadly Walls";
-            this.label1.Visible = false;
-            // 
-            // ScoreLabel
-            // 
-            this.ScoreLabel.AutoSize = true;
-            this.ScoreLabel.Location = new System.Drawing.Point(146, 23);
-            this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(47, 13);
-            this.ScoreLabel.TabIndex = 2;
-            this.ScoreLabel.Text = "Score: 0";
-            // 
-            // DirectionLabel
-            // 
-            this.DirectionLabel.AutoSize = true;
-            this.DirectionLabel.Location = new System.Drawing.Point(929, 25);
-            this.DirectionLabel.Name = "DirectionLabel";
-            this.DirectionLabel.Size = new System.Drawing.Size(47, 13);
-            this.DirectionLabel.TabIndex = 1;
-            this.DirectionLabel.Text = "direction";
-            this.DirectionLabel.Visible = false;
-            // 
-            // GameTimerLabel
-            // 
-            this.GameTimerLabel.AutoSize = true;
-            this.GameTimerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GameTimerLabel.ForeColor = System.Drawing.Color.Green;
-            this.GameTimerLabel.Location = new System.Drawing.Point(462, 16);
-            this.GameTimerLabel.Name = "GameTimerLabel";
-            this.GameTimerLabel.Size = new System.Drawing.Size(64, 25);
-            this.GameTimerLabel.TabIndex = 0;
-            this.GameTimerLabel.Text = "timer";
-            // 
             // GameTimer
             // 
             this.GameTimer.Enabled = true;
@@ -199,6 +146,55 @@
             this.PacmanTimer.Enabled = true;
             this.PacmanTimer.Interval = 10;
             this.PacmanTimer.Tick += new System.EventHandler(this.PacmanTimer_Tick);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.BackgroundImage = global::PacmanDemo.Properties.Resources.TopPanelBlurred;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.ScoreLabel);
+            this.panel2.Controls.Add(this.GameTimerLabel);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1000, 57);
+            this.panel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(87, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 37);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "|";
+            // 
+            // ScoreLabel
+            // 
+            this.ScoreLabel.AutoSize = true;
+            this.ScoreLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ScoreLabel.CausesValidation = false;
+            this.ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ScoreLabel.Location = new System.Drawing.Point(117, 13);
+            this.ScoreLabel.Name = "ScoreLabel";
+            this.ScoreLabel.Size = new System.Drawing.Size(100, 25);
+            this.ScoreLabel.TabIndex = 2;
+            this.ScoreLabel.Text = "Score: 0";
+            // 
+            // GameTimerLabel
+            // 
+            this.GameTimerLabel.AutoSize = true;
+            this.GameTimerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.GameTimerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameTimerLabel.ForeColor = System.Drawing.Color.Green;
+            this.GameTimerLabel.Location = new System.Drawing.Point(12, 13);
+            this.GameTimerLabel.Name = "GameTimerLabel";
+            this.GameTimerLabel.Size = new System.Drawing.Size(78, 25);
+            this.GameTimerLabel.TabIndex = 0;
+            this.GameTimerLabel.Text = "0:00:0";
             // 
             // pictureBox25
             // 
@@ -521,7 +517,6 @@
         internal System.Windows.Forms.Timer CherryTimer;
         internal System.Windows.Forms.Timer PacmanTimer;
         internal System.Windows.Forms.Label GameTimerLabel;
-        internal System.Windows.Forms.Label DirectionLabel;
         internal System.Windows.Forms.Label ScoreLabel;
         internal System.Windows.Forms.Panel GamePanel;
         internal System.Windows.Forms.Panel panel2;
@@ -548,11 +543,11 @@
         internal System.Windows.Forms.PictureBox pictureBox11;
         internal System.Windows.Forms.PictureBox pictureBox10;
         internal System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label label1;
         internal System.Windows.Forms.PictureBox pictureBox25;
         internal System.Windows.Forms.PictureBox pictureBox24;
         internal System.Windows.Forms.PictureBox pictureBox23;
         internal System.Windows.Forms.PictureBox pictureBox22;
+        private System.Windows.Forms.Label label2;
     }
 }
 
